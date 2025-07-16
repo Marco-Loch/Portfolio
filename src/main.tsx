@@ -2,9 +2,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/index.css';
 import App from './App.tsx';
+import MaterialProvider from './provider/material_UI_provider.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <MaterialProvider>
+      <App />
+    </MaterialProvider>
   </StrictMode>
 );
