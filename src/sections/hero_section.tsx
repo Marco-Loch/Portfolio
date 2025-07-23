@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import FaviconML from '../assets/img/faviconML.png';
+import MouseFollowShadow from '../components/MouseFollowShadow/MouseFollowShadow';
 
 interface LogoProps {
   alt?: string;
@@ -133,14 +134,12 @@ const HeroSection: FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
-        width: '100vw',
+        height: '100%',
+        width: '100%',
         position: 'relative',
-        overflow: 'hidden',
         color: '#FFFFFF',
-        background: 'linear-gradient(135deg, rgba(8, 70, 59, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 28, 28, 1) 100%)',
         fontFamily: "'Orbitron', sans-serif",
-        px: { xs: 2, md: 4 }, // Padding für verschiedene Bildschirmgrößen
+        px: { xs: 2, md: 4 },
       }}>
       {/* Header / Navbar */}
       <Box
