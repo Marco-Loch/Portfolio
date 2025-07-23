@@ -1,17 +1,21 @@
 import React from 'react';
 import type { FC } from 'react';
-import { Box, Typography, Button, Stack, SvgIcon } from '@mui/material';
-import type { SvgIconProps } from '@mui/material';
+import { Box, Typography, Button, Stack } from '@mui/material';
 import { keyframes } from '@emotion/react';
+import FaviconML from '../assets/img/faviconML.png';
+
+interface LogoProps {
+  alt?: string;
+  style?: React.CSSProperties;
+  width?: string | number;
+  height?: string | number;
+}
 
 // ==============
-// Platzhalter-Logo (kannst du durch dein eigenes SVG ersetzen)
+// Logo
 // ==============
-const Logo: FC<SvgIconProps> = props => (
-  <SvgIcon {...props} viewBox="0 0 100 100">
-    <path d="M20 20 L80 20 L80 80 L50 80 L50 50 L20 50 Z" fill="currentColor" />
-    <path d="M50 50 L80 50 L80 80 L50 80 Z" fill="rgba(255,255,255,0.3)" />
-  </SvgIcon>
+const Logo: FC<LogoProps> = ({ alt = 'Favicon ML', ...props }) => (
+  <Box component="img" src={FaviconML} alt={alt} sx={{ width: 60, height: 50 }} {...props} />
 );
 
 // ==============
@@ -77,7 +81,7 @@ const Ticker: FC = () => {
     'Open to new projects',
   ];
 
-  // Wir duplizieren die Items, um einen nahtlosen Loop zu erzeugen
+  //dupliziere die Items, um einen nahtlosen Loop zu erzeugen
   const extendedItems = [...tickerItems, ...tickerItems];
 
   return (
@@ -105,7 +109,7 @@ const Ticker: FC = () => {
             <Typography
               variant="body2"
               sx={{
-                fontFamily: "'Karla', sans-serif",
+                fontFamily: "'Orbitron', sans-serif",
                 color: 'rgba(255, 255, 255, 0.7)',
                 whiteSpace: 'nowrap',
               }}>
@@ -135,7 +139,7 @@ const HeroSection: FC = () => {
         overflow: 'hidden',
         color: '#FFFFFF',
         background: 'linear-gradient(135deg, rgba(8, 70, 59, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 28, 28, 1) 100%)',
-        fontFamily: "'Karla', sans-serif",
+        fontFamily: "'Orbitron', sans-serif",
         px: { xs: 2, md: 4 }, // Padding für verschiedene Bildschirmgrößen
       }}>
       {/* Header / Navbar */}
@@ -178,13 +182,19 @@ const HeroSection: FC = () => {
             </Button>
           </Stack>
           <Stack direction="row" spacing={3} sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Button color="inherit" sx={{ textTransform: 'none', fontFamily: "'Karla', sans-serif", fontSize: '1rem' }}>
+            <Button
+              color="inherit"
+              sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
               About me
             </Button>
-            <Button color="inherit" sx={{ textTransform: 'none', fontFamily: "'Karla', sans-serif", fontSize: '1rem' }}>
+            <Button
+              color="inherit"
+              sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
               Skills
             </Button>
-            <Button color="inherit" sx={{ textTransform: 'none', fontFamily: "'Karla', sans-serif", fontSize: '1rem' }}>
+            <Button
+              color="inherit"
+              sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
               Projects
             </Button>
           </Stack>
@@ -192,8 +202,8 @@ const HeroSection: FC = () => {
 
         {/* Rechte Seite: Logo & Name */}
         <Stack direction="row" spacing={2} alignItems="center">
-          <Logo sx={{ fontSize: 40, color: 'white' }} />
-          <Typography variant="h6" sx={{ fontFamily: "'Fira Code', monospace", fontWeight: 'medium' }}>
+          <Logo />
+          <Typography variant="h6" sx={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 'medium' }}>
             Marco Loch
           </Typography>
         </Stack>
@@ -203,7 +213,7 @@ const HeroSection: FC = () => {
       <Box sx={{ textAlign: 'center', zIndex: 1 }}>
         <Typography
           sx={{
-            fontFamily: "'Fira Code', monospace",
+            fontFamily: "'Orbitron', sans-serif",
             fontSize: { xs: '0.9rem', md: '1.1rem' },
             letterSpacing: '0.1em',
             color: 'rgba(255, 255, 255, 0.8)',
@@ -214,7 +224,7 @@ const HeroSection: FC = () => {
         <Typography
           variant="h1"
           sx={{
-            fontFamily: "'Karla', sans-serif",
+            fontFamily: "'Orbitron', sans-serif",
             fontWeight: 700,
             fontSize: { xs: '3.5rem', sm: '5rem', md: '7rem' },
             letterSpacing: '-0.02em',
@@ -233,7 +243,7 @@ const HeroSection: FC = () => {
               borderRadius: '50px',
               px: 4,
               py: 1.5,
-              fontFamily: "'Karla', sans-serif",
+              fontFamily: "'Orbitron', sans-serif",
               textTransform: 'none',
               '&:hover': {
                 borderColor: 'white',
@@ -251,7 +261,7 @@ const HeroSection: FC = () => {
               borderRadius: '50px',
               px: 4,
               py: 1.5,
-              fontFamily: "'Karla', sans-serif",
+              fontFamily: "'Orbitron', sans-serif",
               textTransform: 'none',
               '&:hover': {
                 borderColor: 'white',
