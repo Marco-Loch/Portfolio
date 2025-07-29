@@ -1,3 +1,18 @@
+/* Karla Schriftart */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900; /* Definiert den verfügbaren Gewichts-Bereich (von Thin bis Black/Heavy) */
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700; /* Mittleres Fett */
 }

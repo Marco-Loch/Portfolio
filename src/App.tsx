@@ -1,5 +1,16 @@
+import HeroSection from './sections/hero_section';
+import MouseFollowShadow from './components/MouseFollowShadow/MouseFollowShadow';
+
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <MouseFollowShadow
+      shadowColor="rgba(61, 207, 182, 0.5)"
+      shadowSize={250}
+      blur={150}
+      containerBackground="linear-gradient(135deg, rgba(8, 70, 59, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 28, 28, 1) 100%)">
+      <HeroSection />
+    </MouseFollowShadow>
+  );
 }
 
 export default App;
