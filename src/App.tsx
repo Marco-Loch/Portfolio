@@ -1,5 +1,6 @@
 import HeroSection from './sections/hero_section';
 import MouseFollowShadow from './components/MouseFollowShadow/MouseFollowShadow';
+import AboutMeSection from './sections/about_me_section';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       blur={150}
       containerBackground="linear-gradient(135deg, rgba(8, 70, 59, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 28, 28, 1) 100%)">
       <HeroSection />
+      <AboutMeSection />
     </MouseFollowShadow>
   );
 }

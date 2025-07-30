@@ -19,6 +19,8 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const [containerHeight, setContainerHeight] = useState(0);
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (containerRef.current) {
@@ -33,14 +35,24 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
     const currentContainer = containerRef.current;
     if (currentContainer) {
       currentContainer.addEventListener('mousemove', handleMouseMove);
-    }
 
-    return () => {
-      if (currentContainer) {
+      // Beobachte die Größe des Containers, um die Schattenhöhe anzupassen
+      const resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+          if (entry.target === currentContainer) {
+            setContainerHeight(entry.contentRect.height);
+          }
+        }
+      });
+      resizeObserver.observe(currentContainer);
+
+      return () => {
         currentContainer.removeEventListener('mousemove', handleMouseMove);
-      }
-    };
-  }, []);
+        resizeObserver.disconnect();
+      };
+    }
+    // Abhängigkeit vom containerRef.current ist wichtig, um den Listener korrekt hinzuzufügen/entfernen
+  }, [containerRef.current]);
 
   const backgroundStyle = {
     background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, ${shadowColor} ${
@@ -48,26 +60,37 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
     }px, transparent ${shadowSize}px)`,
     filter: `blur(${blur}px)`,
     pointerEvents: 'none',
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     left: 0,
     width: '100%',
-    height: '100%',
+    // Höhe des Schattens basiert auf der tatsächlichen Höhe des Containers
+    height: containerHeight > 0 ? `${containerHeight}px` : '100%',
     zIndex: 0,
   };
 
   return (
     <Box
+      id="test"
       ref={containerRef}
       sx={{
         position: 'relative',
-        overflow: 'hidden',
-        height: '100vh',
-        width: '100vw',
+        overflowX: 'hidden', // Nur X-Überlauf verstecken, Y soll scrollen können
+        minHeight: '100vh', // Mindesthöhe, damit es bei wenig Inhalt nicht zu klein ist
+        width: '100%',
         background: containerBackground,
+        // Die eigentliche Höhe wird durch den Inhalt bestimmt
+        // Keine feste Höhe hier mehr, damit der Inhalt scrollen kann
       }}>
+      {/* Der Schatten-Layer, der jetzt die Höhe des gesamten Inhalts abdeckt */}
       <Box sx={backgroundStyle} />
-      {children}
+
+      {/* Die Kind-Elemente (HeroSection, AboutMeSection, etc.) werden hier gerendert */}
+      <Box sx={{ position: 'relative', zIndex: 1 }}>
+        {' '}
+        {/* Wichtig: Kinder über dem Schatten platzieren */}
+        {children}
+      </Box>
     </Box>
   );
 };
