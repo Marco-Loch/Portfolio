@@ -34,7 +34,7 @@ const aboutPoints: AboutPoint[] = [
 // Hauptkomponente
 // ==============
 const AboutMeSection = () => {
-  const accentColor = 'rgba(8, 70, 59, 1)';
+  const accentColor = 'rgba(21, 120, 102, 1)';
 
   return (
     <Box
@@ -78,15 +78,6 @@ const AboutMeSection = () => {
               }}>
               Who I Am
             </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                fontFamily: "'Orbitron', sans-serif",
-                fontWeight: 'bold',
-                mb: 4,
-              }}>
-              About me
-            </Typography>
 
             <Paper
               elevation={0}
@@ -94,12 +85,22 @@ const AboutMeSection = () => {
                 border: `2px solid ${accentColor}`,
                 borderRadius: '16px',
                 p: 4,
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backgroundColor: 'rgba(8, 70, 59, 0.6)',
               }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontFamily: "'Orbitron', sans-serif",
+                  fontWeight: 'bold',
+                  color: accentColor,
+                  mb: 4,
+                }}>
+                About me
+              </Typography>
               <Typography
                 variant="body1"
                 sx={{
-                  fontFamily: "'Karla', sans-serif",
+                  fontFamily: "'Orbitron', sans-serif",
                   color: 'rgba(255, 255, 255, 0.8)',
                   mb: 4,
                 }}>
@@ -115,7 +116,7 @@ const AboutMeSection = () => {
                     </Box>
                     <Typography
                       sx={{
-                        fontFamily: "'Karla', sans-serif",
+                        fontFamily: "'Orbitron', sans-serif",
                         color: 'rgba(255, 255, 255, 0.7)',
                       }}>
                       {point.text}
