@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import FaviconML from '../assets/img/faviconML.png';
-import MouseFollowShadow from '../components/MouseFollowShadow/MouseFollowShadow';
 
 interface LogoProps {
   alt?: string;
@@ -83,7 +82,7 @@ const Ticker: FC = () => {
   ];
 
   //dupliziere die Items, um einen nahtlosen Loop zu erzeugen
-  const extendedItems = [...tickerItems, ...tickerItems];
+  const extendedItems = [...tickerItems, ...tickerItems, ...tickerItems];
 
   return (
     <Box
@@ -134,12 +133,13 @@ const HeroSection: FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%',
+        height: '100vh',
         width: '100%',
         position: 'relative',
         color: '#FFFFFF',
         fontFamily: "'Orbitron', sans-serif",
         px: { xs: 2, md: 4 },
+        overflowX: 'hidden',
       }}>
       {/* Header / Navbar */}
       <Box
