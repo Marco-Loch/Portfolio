@@ -7,8 +7,8 @@ function App() {
   return (
     <MouseFollowShadow
       shadowColor="rgba(61, 207, 182, 0.5)"
-      shadowSize={250}
-      blur={150}
+      shadowSize={150}
+      blur={100}
       containerBackground="linear-gradient(135deg, rgba(8, 70, 59, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 28, 28, 1) 100%)">
       <HeroSection />
       <AboutMeSection />

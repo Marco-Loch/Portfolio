@@ -88,7 +88,6 @@ const SkillsSection: React.FC = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '100vh',
       }}>
       <Grid container spacing={{ xs: 4, md: 8 }} maxWidth="lg" alignItems="center">
         {/* Linke Spalte: Beschreibung der Skills */}

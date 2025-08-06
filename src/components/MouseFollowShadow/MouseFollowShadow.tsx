@@ -24,10 +24,9 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
         setMousePosition({
-          x: event.clientX - rect.left,
-          y: event.clientY - rect.top,
+          x: event.clientX,
+          y: event.clientY,
         });
       }
     };
@@ -66,7 +65,7 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
     width: '100%',
     // Höhe des Schattens basiert auf der tatsächlichen Höhe des Containers
     height: containerHeight > 0 ? `${containerHeight}px` : '100%',
-    zIndex: 0,
+    zIndex: 2,
   };
 
   return (
@@ -75,9 +74,7 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
       ref={containerRef}
       sx={{
         position: 'relative',
-        overflowX: 'hidden', // Nur X-Überlauf verstecken, Y soll scrollen können
         minHeight: '100vh', // Mindesthöhe, damit es bei wenig Inhalt nicht zu klein ist
-        width: '100%',
         background: containerBackground,
         // Die eigentliche Höhe wird durch den Inhalt bestimmt
         // Keine feste Höhe hier mehr, damit der Inhalt scrollen kann

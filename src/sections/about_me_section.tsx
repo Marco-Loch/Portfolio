@@ -35,7 +35,7 @@ const aboutPoints: AboutPoint[] = [
 // ==============
 const AboutMeSection = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
-  // const boxShadowColor = 'rgba(8, 70, 59, 0.5)';
+  // const boxShadowColor = 'rgba(8, 70, 59, 0.5)';  //eventuell benutzen
 
   return (
     <Box
@@ -47,7 +47,6 @@ const AboutMeSection = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '100vh',
       }}>
       <Grid container spacing={{ xs: 4, md: 8 }} maxWidth="lg">
         {/* Linke Spalte */}
