@@ -49,11 +49,10 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => (
   <Stack
     direction="column"
     alignItems="center"
-    spacing={1} // Spacing zwischen Bild und Text ist nicht mehr relevant, kann aber für spätere Ergänzungen bleiben
+    spacing={1}
     sx={{
       p: 2,
       borderRadius: '8px',
-      // Optional: Hintergrund bei Hover für Feedback
       '&:hover': {
         backgroundColor: 'rgba(255, 255, 255, 0.05)',
       },
@@ -62,14 +61,13 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => (
     <Box
       component="img"
       src={skill.icon}
-      alt={skill.name} // 'alt'-Text ist wichtig für Barrierefreiheit, daher 'name' beibehalten
+      alt={skill.name}
       sx={{
-        width: { xs: 70, sm: 80, md: 90 }, // Icons etwas größer, da kein Text darunter
+        width: { xs: 70, sm: 80, md: 90 },
         height: { xs: 70, sm: 80, md: 90 },
         objectFit: 'contain',
       }}
     />
-    {/* Die Typography-Komponente für den Skill-Namen wurde entfernt */}
   </Stack>
 );
 
@@ -78,7 +76,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => (
 // ==============
 const SkillsSection: React.FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
-  const boxShadowColor = 'rgba(8, 70, 59, 0.5)';
+  // const boxShadowColor = 'rgba(8, 70, 59, 0.5)';
 
   return (
     <Box
@@ -114,7 +112,7 @@ const SkillsSection: React.FC = () => {
                 borderRadius: '16px',
                 p: { xs: 3, sm: 4 },
                 backgroundColor: 'rgba(8, 70, 59, 0.6)',
-                boxShadow: `0 8px 24px ${boxShadowColor}`,
+                // boxShadow: `0 8px 24px ${boxShadowColor}`,
               }}>
               <Typography
                 variant="h2"

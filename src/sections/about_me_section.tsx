@@ -35,6 +35,7 @@ const aboutPoints: AboutPoint[] = [
 // ==============
 const AboutMeSection = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
+  // const boxShadowColor = 'rgba(8, 70, 59, 0.5)';
 
   return (
     <Box
@@ -86,6 +87,7 @@ const AboutMeSection = () => {
                 borderRadius: '16px',
                 p: 4,
                 backgroundColor: 'rgba(8, 70, 59, 0.6)',
+                // boxShadow: `0 8px 24px ${boxShadowColor}`,
               }}>
               <Typography
                 variant="h2"
