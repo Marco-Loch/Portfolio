@@ -66,7 +66,7 @@ const projects: Project[] = [
     image: joinProjectImg,
   },
   {
-    title: 'El Pollo Loco',
+    title: 'Crazy Dog',
     description: 'Ein einfaches Jump-and-Run-Spiel, das komplett mit reinem JavaScript entwickelt wurde.',
     technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
     liveLink: '#',
@@ -96,7 +96,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Paper
       sx={{
-        backgroundColor: 'rgba(28, 28, 28, 1)',
+        background:
+          'linear-gradient(-130deg, rgba(8, 70, 59, 1) 0%, rgba(27, 27, 27, 1) 50%, rgba(28, 28, 28, 1) 100%)',
         color: '#FFFFFF',
         borderRadius: '16px',
         boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
