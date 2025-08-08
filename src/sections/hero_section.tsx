@@ -1,8 +1,14 @@
 import React from 'react';
-import type { FC } from 'react';
+import type { FC, RefObject } from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import FaviconML from '../assets/img/faviconML.png';
+
+interface HeroSectionProps {
+  aboutMeRef: RefObject<HTMLDivElement>;
+  skillsRef: RefObject<HTMLDivElement>;
+  projectsRef: RefObject<HTMLDivElement>;
+}
 
 interface LogoProps {
   alt?: string;
@@ -125,7 +131,16 @@ const Ticker: FC = () => {
 // ==============
 // Hauptkomponente: HeroSection
 // ==============
-const HeroSection: FC = () => {
+const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef }) => {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -182,16 +197,19 @@ const HeroSection: FC = () => {
           </Stack>
           <Stack direction="row" spacing={3} sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button
+              onClick={() => scrollToSection(aboutMeRef)}
               color="inherit"
               sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
               About me
             </Button>
             <Button
+              onClick={() => scrollToSection(skillsRef)}
               color="inherit"
               sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
               Skills
             </Button>
             <Button
+              onClick={() => scrollToSection(projectsRef)}
               color="inherit"
               sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
               Projects
