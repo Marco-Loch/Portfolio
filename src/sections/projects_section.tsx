@@ -216,7 +216,7 @@ const ProjectsSection: React.FC = () => {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        minHeight: '100vh',
+        minHeight: '100%',
       }}>
       <Grid container spacing={{ xs: 6, md: 8 }} maxWidth="lg">
         <Grid size={{ xs: 12 }}>
