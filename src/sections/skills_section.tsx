@@ -13,6 +13,8 @@ import restApiIcon from '../assets/img/restapi.png';
 import scrumIcon from '../assets/img/scrum.png';
 import growthMindsetIcon from '../assets/img/growthmindset.png';
 
+import { useTranslation } from 'react-i18next';
+
 // ==============
 // Typdefinition für einen Skill
 // ==============
@@ -76,7 +78,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => (
 // ==============
 const SkillsSection: React.FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
-  // const boxShadowColor = 'rgba(8, 70, 59, 0.5)';
+
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -101,7 +104,7 @@ const SkillsSection: React.FC = () => {
                 fontWeight: 'bold',
                 mb: 1,
               }}>
-              Technologies
+              {t('skills-section.technologies')}
             </Typography>
 
             <Paper
@@ -122,7 +125,7 @@ const SkillsSection: React.FC = () => {
                   mb: 3,
                   fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
                 }}>
-                Skill Set
+                {t('skills-section.textbox.headline')}
               </Typography>
 
               <Typography
@@ -133,9 +136,7 @@ const SkillsSection: React.FC = () => {
                   mb: 4,
                   lineHeight: 1.6,
                 }}>
-                A short introduction of your skills. Highlight your experience of using different front-end technologies
-                and emphasise your openness to learning and adapting to new technologies. Show how important it is for
-                you to keep up with the rapid changes in web development.
+                {t('skills-section.textbox.introduction')}
               </Typography>
 
               <Typography
@@ -146,7 +147,7 @@ const SkillsSection: React.FC = () => {
                   color: 'white',
                   mb: 2,
                 }}>
-                You need another skill?
+                {t('skills-section.textbox.question')}
               </Typography>
 
               <Typography
@@ -156,7 +157,7 @@ const SkillsSection: React.FC = () => {
                   color: 'rgba(255, 255, 255, 0.7)',
                   mb: 4,
                 }}>
-                Feel free to contact me. I look forward to expanding on my previous knowledge.
+                {t('skills-section.textbox.looking-forward')}
               </Typography>
 
               <Button
@@ -175,7 +176,7 @@ const SkillsSection: React.FC = () => {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   },
                 }}>
-                Let's Talk
+                {t('skills-section.textbox.button.text')}
               </Button>
             </Paper>
           </Box>

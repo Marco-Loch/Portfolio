@@ -1,0 +1,78 @@
+{
+    "hero-section": {
+        "about": "About Me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "frontenddev": "Frontend Developer",
+        "check-my-work": "My Work",
+        "contact": "Contact",
+        "remote": "Available for Remote Work",
+        "based": "Crailsheim, Germany",
+        "open-for-projects": "Open to New Projects"
+    },
+    "about-me-section": {
+        "who-am-i": "Who I Am:",
+        "textbox": {
+            "headline": "About Me",
+            "introduction": "Hi, I'm Marco – a passionate developer with a love for clean code and creative solutions. I've been fascinated by technology from an early age, and I’m still amazed at how a simple idea can turn into something great with just a few lines of code.",
+            "location": "I’m based in Crailsheim but equally enjoy working remotely. For the right projects, I’m open to relocation as well.",
+            "growth-mindset": "I believe in lifelong learning and see every new technology as an opportunity to grow. Standing still is not an option – I love pushing my skills to the next level.",
+            "problem-solving": "Challenges drive me. I approach problems with structure, explore different solutions, and aim for pragmatic yet elegant results – learning something new from every step."
+        }
+    },
+    "skills-section": {
+        "technologies": "Technologies",
+        "textbox": {
+            "headline": "Skill Set",
+            "introduction": "My toolkit combines proven expertise with a passion for exploring new technologies. I enjoy working with modern front-end frameworks, clean design principles, and efficient workflows – and I’m always eager to learn what’s next in web development.",
+            "question": "Need another skill?",
+            "looking-forward": "Feel free to contact me. I’m always happy to expand my knowledge.",
+            "button": {
+                "text": "Let's Talk"
+            }
+        }
+    },
+    "project-section": {
+    "headline": "My Projects",
+    "projects": {
+        "join": {
+            "description": "A project management application with a Kanban style. Create and organize tasks via drag-and-drop, assign them to users, and categorize them."
+            },
+        "crazy-dog": {
+            "description": "A simple jump-and-run game developed entirely with pure JavaScript."
+            },
+        "evelike": {
+            "description": "A lobby-based online multiplayer strategy game. Uses socket.io for real-time communication with a custom Node server."
+            }
+        }
+    },
+    "contact-section": {
+        "contact-me": "Contact me",
+        "headline": "Let's work together",
+        "question": "Got a problem to solve?",
+        "text": "I’m always open to exciting opportunities where I can contribute my skills and creativity. Whether it’s building a sleek interface, improving user experience, or bringing fresh ideas to the table – I’m ready to add value to your next project.",
+        "ending-intro": "Need a Frontend developer?",
+        "ending-outro": "Let's talk!",
+        "input": {
+            "name": "What's your name?",
+            "email": "What's your email?",
+            "subject": "How can I help you?"
+        },
+        "placeholder": {
+            "name": "Your name goes here",
+            "email": "yourmail@email.com",
+            "subject": "Hello Marco, I am interested in.."
+        },
+        "privacy": {
+            "first": "I've read the",
+            "second": "privacy policy",
+            "last": "and agree to the processing of my data as outlined."
+        },
+        "button-text": "Say Hello :)"
+    },
+    "footer-section": {
+        "webdev": "Web Developer",
+        "location": "Crailsheim Germany",
+        "legal": "Legal Notice"
+    }
+}

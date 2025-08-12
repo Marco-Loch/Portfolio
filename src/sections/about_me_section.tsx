@@ -4,6 +4,8 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 
+import { useTranslation } from 'react-i18next';
+
 // ==============
 // Typdefinition für die Listeneinträge
 // ==============
@@ -13,29 +15,27 @@ interface AboutPoint {
 }
 
 // ==============
-// Daten für die "Über mich"-Punkte
-// ==============
-const aboutPoints: AboutPoint[] = [
-  {
-    icon: LocationOnOutlinedIcon,
-    text: 'Wo bist du ansässig? Wärst du offen für Remote-Arbeit oder einen möglichen Umzug?',
-  },
-  {
-    icon: AutoAwesomeOutlinedIcon,
-    text: 'Zeige, dass du aufgeschlossen bist. Bist du begeistert davon, neue Technologien zu lernen und deine Fähigkeiten kontinuierlich zu verbessern?',
-  },
-  {
-    icon: PsychologyOutlinedIcon,
-    text: 'Eine kurze Beschreibung deines Ansatzes zur Problemlösung. Lernst du aus jeder Herausforderung, während du nach der effizientesten oder elegantesten Lösung suchst?',
-  },
-];
-
-// ==============
 // Hauptkomponente
 // ==============
 const AboutMeSection = () => {
+  const { t } = useTranslation();
+
   const accentColor = 'rgba(21, 120, 102, 1)';
-  // const boxShadowColor = 'rgba(8, 70, 59, 0.5)';  //eventuell benutzen
+
+  const aboutPoints: AboutPoint[] = [
+    {
+      icon: LocationOnOutlinedIcon,
+      text: t('about-me-section.textbox.location'),
+    },
+    {
+      icon: AutoAwesomeOutlinedIcon,
+      text: t('about-me-section.textbox.growth-mindset'),
+    },
+    {
+      icon: PsychologyOutlinedIcon,
+      text: t('about-me-section.textbox.problem-solving'),
+    },
+  ];
 
   return (
     <Box
@@ -76,7 +76,7 @@ const AboutMeSection = () => {
                 fontWeight: 'bold',
                 mb: 1,
               }}>
-              Who I Am
+              {t('about-me-section.who-am-i')}
             </Typography>
 
             <Paper
@@ -96,7 +96,7 @@ const AboutMeSection = () => {
                   color: accentColor,
                   mb: 4,
                 }}>
-                About me
+                {t('about-me-section.textbox.headline')}
               </Typography>
               <Typography
                 variant="body1"
@@ -105,8 +105,7 @@ const AboutMeSection = () => {
                   color: 'rgba(255, 255, 255, 0.8)',
                   mb: 4,
                 }}>
-                Hey, ich bin Marco! Hier kannst du etwas über dich und deine Leidenschaft für IT und Programmierung
-                schreiben. Was ist deine Inspirationsquelle, um deine Fähigkeiten zu verbessern?
+                {t('about-me-section.textbox.introduction')}
               </Typography>
 
               <Stack spacing={3}>

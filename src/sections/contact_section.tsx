@@ -1,7 +1,11 @@
 import type { FC } from 'react';
 import { Box, Typography, Stack, TextField, Button, Checkbox, FormControlLabel } from '@mui/material';
 
+import { useTranslation } from 'react-i18next';
+
 const ContactSection: FC = () => {
+  const { t } = useTranslation();
+
   const accentColor = 'rgba(21, 120, 102, 1)';
   const borderColor = 'rgba(255, 255, 255, 0.2)';
 
@@ -29,7 +33,7 @@ const ContactSection: FC = () => {
               fontWeight: 'bold',
               mb: 1,
             }}>
-            Contact me
+            {t('contact-section.contact-me')}
           </Typography>
           <Typography
             variant="h2"
@@ -40,7 +44,7 @@ const ContactSection: FC = () => {
               fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
               lineHeight: 1.1,
             }}>
-            Let's work together
+            {t('contact-section.headline')}
           </Typography>
           <Typography
             variant="h5"
@@ -49,7 +53,7 @@ const ContactSection: FC = () => {
               color: 'white',
               mt: 4,
             }}>
-            Got a problem to solve?
+            {t('contact-section.question')}
           </Typography>
           <Typography
             variant="body1"
@@ -58,8 +62,7 @@ const ContactSection: FC = () => {
               color: 'rgba(255, 255, 255, 0.7)',
               lineHeight: 1.6,
             }}>
-            Encourage people to contact you and describe what role you are interested in. Show that you will add value
-            to their projects through your work.
+            {t('contact-section.text')}
           </Typography>
           <Typography
             variant="body1"
@@ -67,9 +70,9 @@ const ContactSection: FC = () => {
               fontFamily: "'Orbitron', sans-serif",
               color: 'rgba(255, 255, 255, 0.7)',
             }}>
-            Need a Frontend developer?{' '}
+            {t('contact-section.ending-intro')}{' '}
             <Box component="span" sx={{ color: accentColor }}>
-              Let's talk!
+              {t('contact-section.ending-outro')}
             </Box>
           </Typography>
         </Stack>
@@ -86,11 +89,11 @@ const ContactSection: FC = () => {
                   fontWeight: 'medium',
                   color: accentColor,
                 }}>
-                What's your name?
+                {t('contact-section.input.name')}
               </Typography>
               <TextField
                 variant="standard"
-                placeholder="Your name goes here"
+                placeholder={t('contact-section.placeholder.name')}
                 fullWidth
                 InputProps={{
                   disableUnderline: true,
@@ -112,11 +115,11 @@ const ContactSection: FC = () => {
                   fontWeight: 'medium',
                   color: accentColor,
                 }}>
-                What's your email?
+                {t('contact-section.input.email')}
               </Typography>
               <TextField
                 variant="standard"
-                placeholder="youremail@email.com"
+                placeholder={t('contact-section.placeholder.email')}
                 fullWidth
                 InputProps={{
                   disableUnderline: true,
@@ -138,13 +141,13 @@ const ContactSection: FC = () => {
                   fontWeight: 'medium',
                   color: accentColor,
                 }}>
-                How can I help you?
+                {t('contact-section.input.subject')}
               </Typography>
               <TextField
                 variant="standard"
                 multiline
                 rows={4}
-                placeholder="Hello Marco, I am interested in.."
+                placeholder={t('contact-section.placeholder.subject')}
                 fullWidth
                 InputProps={{
                   disableUnderline: true,
@@ -162,11 +165,11 @@ const ContactSection: FC = () => {
               control={<Checkbox sx={{ color: 'white' }} />}
               label={
                 <Typography variant="body2" sx={{ fontFamily: "'Orbitron', sans-serif", color: 'white' }}>
-                  I've read the{' '}
+                  {t('contact-section.privacy.first')}{' '}
                   <Box component="span" sx={{ color: accentColor }}>
-                    privacy policy
+                    {t('contact-section.privacy.second')}
                   </Box>{' '}
-                  and agree to the processing of my data as outlined.
+                  {t('contact-section.privacy.last')}
                 </Typography>
               }
               sx={{ my: 2 }}
@@ -189,7 +192,7 @@ const ContactSection: FC = () => {
                   bgcolor: 'rgba(21, 120, 102, 0.8)',
                 },
               }}>
-              Say Hello :)
+              {t('contact-section.button-text')}
             </Button>
           </Stack>
         </Box>
