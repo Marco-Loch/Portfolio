@@ -61,24 +61,24 @@ const projects: Project[] = [
       allTechnologies.css,
       allTechnologies.firebase,
     ],
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: 'https://marco-loch.developerakademie.net/join/index.html',
+    githubLink: 'https://github.com/Marco-Loch/join',
     image: joinProjectImg,
   },
   {
     title: 'Crazy Dog',
     description: 'Ein einfaches Jump-and-Run-Spiel, das komplett mit reinem JavaScript entwickelt wurde.',
     technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: 'https://marco-loch.developerakademie.net/CrazyDogEng/index.html',
+    githubLink: 'https://github.com/Marco-Loch/2d-Game-DA',
     image: elPolloLocoProjectImg,
   },
   {
     title: 'EVElike',
     description: 'Ein Chat-Messenger, der von Slack inspiriert ist und ähnliche Funktionen bietet.',
     technologies: [allTechnologies.js, allTechnologies.html, allTechnologies.css, allTechnologies.react],
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: 'https://evelike.onrender.com/',
+    githubLink: 'https://github.com/Marco-Loch/EVElike',
     image: daBubbleProjectImg,
   },
 ];
@@ -216,7 +216,7 @@ const ProjectsSection: React.FC = () => {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        minHeight: '100vh',
+        minHeight: '100%',
       }}>
       <Grid container spacing={{ xs: 6, md: 8 }} maxWidth="lg">
         <Grid size={{ xs: 12 }}>

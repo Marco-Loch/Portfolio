@@ -8,6 +8,7 @@ interface HeroSectionProps {
   aboutMeRef: RefObject<HTMLDivElement>;
   skillsRef: RefObject<HTMLDivElement>;
   projectsRef: RefObject<HTMLDivElement>;
+  contactRef: RefObject<HTMLDivElement>;
 }
 
 interface LogoProps {
@@ -131,7 +132,7 @@ const Ticker: FC = () => {
 // ==============
 // Hauptkomponente: HeroSection
 // ==============
-const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef }) => {
+const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef, contactRef }) => {
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({
