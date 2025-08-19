@@ -45,7 +45,6 @@ const ContactSection: FC = () => {
   const borderColor = 'rgba(255, 255, 255, 0.2)';
   const orbitron = "'Orbitron', sans-serif";
 
-  // Feldweise Validierung
   const validateField = (name: keyof ContactFormInputs, value: any) => {
     const singleSchema = contactSchema.pick({ [name]: true });
     const result = singleSchema.safeParse({ [name]: value });
