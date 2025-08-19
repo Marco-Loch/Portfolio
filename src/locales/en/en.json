@@ -33,17 +33,17 @@
         }
     },
     "project-section": {
-    "headline": "My Projects",
-    "projects": {
-        "join": {
-            "description": "A project management application with a Kanban style. Create and organize tasks via drag-and-drop, assign them to users, and categorize them."
-            },
-        "crazy-dog": {
-            "description": "A simple jump-and-run game developed entirely with pure JavaScript."
-            },
-        "evelike": {
-            "description": "A lobby-based online multiplayer strategy game. Uses socket.io for real-time communication with a custom Node server."
-            }
+        "headline": "My Projects",
+        "projects": {
+            "join": {
+                "description": "A project management application with a Kanban style. Create and organize tasks via drag-and-drop, assign them to users, and categorize them."
+                },
+            "crazy-dog": {
+                "description": "A simple jump-and-run game developed entirely with pure JavaScript."
+                },
+            "evelike": {
+                "description": "A lobby-based online multiplayer strategy game. Uses socket.io for real-time communication with a custom Node server."
+                }
         }
     },
     "contact-section": {
