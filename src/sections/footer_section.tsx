@@ -1,11 +1,15 @@
 import React from 'react';
-import { Box, Typography, Link, Stack, Divider } from '@mui/material';
+import { Box, Typography, Link, Stack } from '@mui/material';
 
 import LogoImage from '../assets/img/faviconML.png';
+
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
   const linkColor = 'rgba(255, 255, 255, 0.7)';
+
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -31,10 +35,10 @@ const Footer: React.FC = () => {
               color: linkColor,
               mt: 1,
             }}>
-            Web Developer
+            {t('footer-section.webdev')}
           </Typography>
           <Typography variant="body2" sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor }}>
-            Crailsheim Germany
+            {t('footer-section.location')}
           </Typography>
         </Stack>
 
@@ -79,7 +83,7 @@ const Footer: React.FC = () => {
             color="inherit"
             underline="none"
             sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
-            Legal Notice
+            {t('footer-section.legal')}
           </Link>
         </Stack>
       </Stack>

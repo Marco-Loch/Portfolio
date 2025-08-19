@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import HeroSection from './sections/hero_section';
 import MouseFollowShadow from './components/MouseFollowShadow/MouseFollowShadow';
 import AboutMeSection from './sections/about_me_section';

@@ -3,6 +3,7 @@ import type { FC, RefObject } from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import FaviconML from '../assets/img/faviconML.png';
+import { useTranslation } from 'react-i18next';
 
 interface HeroSectionProps {
   aboutMeRef: RefObject<HTMLDivElement>;
@@ -81,11 +82,12 @@ const marqueeAnimation = keyframes`
 `;
 
 const Ticker: FC = () => {
+  const { t } = useTranslation();
   const tickerItems: string[] = [
-    'Available for remote work',
-    'Frontend Developer',
-    'Based in Crailsheim',
-    'Open to new projects',
+    t('hero-section.remote'),
+    t('hero-section.frontenddev'),
+    t('hero-section.based'),
+    t('hero-section.open-for-projects'),
   ];
 
   //dupliziere die Items, um einen nahtlosen Loop zu erzeugen
@@ -133,6 +135,8 @@ const Ticker: FC = () => {
 // Hauptkomponente: HeroSection
 // ==============
 const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef, contactRef }) => {
+  const { t, i18n } = useTranslation();
+
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -140,6 +144,10 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
         block: 'start',
       });
     }
+  };
+
+  const setLanguage = async (lang: string) => {
+    await i18n.changeLanguage(lang);
   };
 
   return (
@@ -178,21 +186,40 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
             sx={{ border: '1px solid rgba(255,255,255,0.3)', borderRadius: '20px', p: '4px' }}>
             <Button
               size="small"
-              sx={{
-                color: 'white',
-                borderRadius: '20px',
-                bgcolor: 'rgba(255,255,255,0.2)',
-                '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' },
-              }}>
+              onClick={() => setLanguage('en')}
+              sx={
+                i18n.language === 'en'
+                  ? {
+                      color: 'white',
+                      borderRadius: '20px',
+                      bgcolor: 'rgba(255,255,255,0.2)',
+                      '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' },
+                    }
+                  : {
+                      color: 'rgba(255,255,255,0.7)',
+                      borderRadius: '20px',
+                      '&:hover': { bgcolor: 'rgba(255,255,0.1)' },
+                    }
+              }>
               EN
             </Button>
             <Button
               size="small"
-              sx={{
-                color: 'rgba(255,255,255,0.7)',
-                borderRadius: '20px',
-                '&:hover': { bgcolor: 'rgba(255,255,0.1)' },
-              }}>
+              onClick={() => setLanguage('de')}
+              sx={
+                i18n.language === 'de'
+                  ? {
+                      color: 'white',
+                      borderRadius: '20px',
+                      bgcolor: 'rgba(255,255,255,0.2)',
+                      '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' },
+                    }
+                  : {
+                      color: 'rgba(255,255,255,0.7)',
+                      borderRadius: '20px',
+                      '&:hover': { bgcolor: 'rgba(255,255,0.1)' },
+                    }
+              }>
               DE
             </Button>
           </Stack>
@@ -201,19 +228,19 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
               onClick={() => scrollToSection(aboutMeRef)}
               color="inherit"
               sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
-              About me
+              {t('hero-section.about')}
             </Button>
             <Button
               onClick={() => scrollToSection(skillsRef)}
               color="inherit"
               sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
-              Skills
+              {t('hero-section.skills')}
             </Button>
             <Button
               onClick={() => scrollToSection(projectsRef)}
               color="inherit"
               sx={{ textTransform: 'none', fontFamily: "'Orbitron', sans-serif", fontSize: '1rem' }}>
-              Projects
+              {t('hero-section.projects')}
             </Button>
           </Stack>
         </Stack>
@@ -237,7 +264,7 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
             color: 'rgba(255, 255, 255, 0.8)',
             mb: 2,
           }}>
-          Frontend Developer
+          {t('hero-section.frontenddev')}
         </Typography>
         <Typography
           variant="h1"
@@ -255,6 +282,7 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
           <Button
             variant="outlined"
             size="large"
+            onClick={() => scrollToSection(projectsRef)}
             sx={{
               color: 'white',
               borderColor: 'rgba(255, 255, 255, 0.5)',
@@ -268,7 +296,7 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
               },
             }}>
-            Check my work
+            {t('hero-section.check-my-work')}
           </Button>
           <Button
             variant="outlined"
@@ -286,7 +314,7 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
               },
             }}>
-            Contact me
+            {t('hero-section.contact')}
           </Button>
         </Stack>
       </Box>

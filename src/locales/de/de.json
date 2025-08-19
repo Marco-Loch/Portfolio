@@ -1,0 +1,78 @@
+{
+    "hero-section": {
+        "about": "Über mich",
+        "skills": "Skills",
+        "projects": "Projekte",
+        "frontenddev": "Frontend-Entwickler",
+        "check-my-work": "Meine Arbeit",
+        "contact": "Kontakt",
+        "remote": "Remote verfügbar",
+        "based": "Crailsheim, Deutschland",
+        "open-for-projects": "Offen für neue Projekte"
+    },
+    "about-me-section": {
+        "who-am-i": "Wer ich bin:",
+        "textbox": {
+            "headline": "Über mich",
+            "introduction": "Hey, ich bin Marco – leidenschaftlicher Entwickler mit einem Faible für sauberen Code und kreative Lösungen. Schon früh hat mich die Welt der Technik begeistert, und seitdem fasziniert mich, wie aus einer Idee mit ein paar Zeilen Code etwas Großes entstehen kann.",
+            "location": "Ich lebe in Crailsheim, arbeite aber genauso gerne ortsunabhängig. Für spannende Projekte bin ich auch offen für Remote-Arbeit oder einen Umzug.",
+            "growth-mindset": "Ich glaube an lebenslanges Lernen und sehe jede neue Technologie als Chance, meinen Horizont zu erweitern. Stillstand ist für mich keine Option – ich liebe es, meine Skills kontinuierlich zu verbessern.",
+            "problem-solving": "Herausforderungen motivieren mich. Ich gehe Probleme strukturiert an, teste verschiedene Ansätze und finde pragmatische, aber elegante Lösungen – und lerne dabei aus jedem Schritt."
+        }
+    },
+    "skills-section": {
+        "technologies": "Technologien",
+        "textbox": {
+            "headline": "Skill Set",
+            "introduction": "Mein Werkzeugkasten vereint erprobtes Know-how mit der Leidenschaft, neue Technologien zu entdecken. Ich arbeite gerne mit modernen Frontend-Frameworks, klaren Designprinzipien und effizienten Workflows – und bin immer neugierig darauf, was als Nächstes im Web entsteht.",
+            "question": "Fehlt noch ein Skill?",
+            "looking-forward": "Melde dich gerne bei mir – ich freue mich, mein Wissen zu erweitern.",
+        "button": {
+            "text": "Lass uns reden"
+        }
+    }
+    },
+    "project-section": {
+        "headline": "Meine Projekte",
+        "projects": {
+            "join": {
+                "description": "Eine Projektmanagement-Anwendung im Kanban-Stil. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise sie Nutzern zu und kategorisiere sie."
+            },
+            "crazy-dog": {
+                "description": "Ein einfaches Jump-and-Run-Spiel, das komplett mit reinem JavaScript entwickelt wurde."
+            },
+            "evelike": {
+                "description": "Ein lobbybasiertes online Multiplayer Strategiespiel. Nutzt socket.io zur Echtzeitkommunikation mit einem selbst geschriebenen Node Server."
+      }
+    }
+  },
+    "contact-section": {
+        "contact-me": "Kontaktiere mich",
+        "headline": "Lass uns zusammenarbeiten",
+        "question": "Hast du ein Problem zu lösen?",
+        "text": "Ich bin immer offen für spannende Möglichkeiten, bei denen ich meine Fähigkeiten und Kreativität einbringen kann. Ob es darum geht, ein modernes Interface zu gestalten, die Benutzererfahrung zu verbessern oder frische Ideen einzubringen – ich bin bereit, echten Mehrwert für dein nächstes Projekt zu schaffen.",
+        "ending-intro": "Du suchst einen Frontend-Entwickler?",
+        "ending-outro": "Lass uns reden!",
+        "input": {
+            "name": "Wie heißt du?",
+            "email": "Wie lautet deine E-Mail?",
+            "subject": "Wobei kann ich dir helfen?"
+        },
+        "placeholder": {
+            "name": "Dein Name",
+            "email": "deinname@email.com",
+            "subject": "Hallo Marco, ich interessiere mich für..."
+        },
+        "privacy": {
+            "first": "Ich habe die",
+            "second": "Datenschutzerklärung",
+            "last": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+        },
+        "button-text": "Sag Hallo :)"
+    },
+    "footer-section": {
+        "webdev": "Web-Entwickler",
+        "location": "Crailsheim Baden-Württemberg",
+        "legal": "Impressum"
+    }
+}

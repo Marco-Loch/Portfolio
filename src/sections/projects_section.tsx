@@ -12,8 +12,8 @@ import angularIcon from '../assets/img/tangular.png';
 import firebaseIcon from '../assets/img/tfirebase.png';
 import reactIcon from '../assets/img/treact.png';
 
-// Importiere Projektbilder
-// Passe die Pfade zu deinen tatsächlichen Bildern an!
+import { useTranslation } from 'react-i18next';
+
 import joinProjectImg from '../assets/img/join.png';
 import elPolloLocoProjectImg from '../assets/img/crazydog.png';
 import daBubbleProjectImg from '../assets/img/evelike.png';
@@ -49,11 +49,9 @@ const allTechnologies = {
 // ==============
 // Projektdaten
 // ==============
-const projects: Project[] = [
+const projects: Omit<Project, 'description'>[] = [
   {
     title: 'Join',
-    description:
-      'Eine Projektmanagement-Anwendung im Kanban-Stil. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise sie Nutzern zu und kategorisiere sie.',
     technologies: [
       allTechnologies.angular,
       allTechnologies.ts,
@@ -67,7 +65,6 @@ const projects: Project[] = [
   },
   {
     title: 'Crazy Dog',
-    description: 'Ein einfaches Jump-and-Run-Spiel, das komplett mit reinem JavaScript entwickelt wurde.',
     technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
     liveLink: 'https://marco-loch.developerakademie.net/CrazyDogEng/index.html',
     githubLink: 'https://github.com/Marco-Loch/2d-Game-DA',
@@ -75,7 +72,6 @@ const projects: Project[] = [
   },
   {
     title: 'EVElike',
-    description: 'Ein Chat-Messenger, der von Slack inspiriert ist und ähnliche Funktionen bietet.',
     technologies: [allTechnologies.js, allTechnologies.html, allTechnologies.css, allTechnologies.react],
     liveLink: 'https://evelike.onrender.com/',
     githubLink: 'https://github.com/Marco-Loch/EVElike',
@@ -87,10 +83,14 @@ const projects: Project[] = [
 // Wiederverwendbare Komponente für eine einzelne Projektkarte
 // ==============
 interface ProjectCardProps {
-  project: Project;
+  project: Omit<Project, 'description'>;
+  translationKey: string; // z.B. 'join', 'crazy-dog', 'evelike'
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, translationKey }) => {
+  const { t } = useTranslation();
+  const description = t(`project-section.projects.${translationKey}.description`);
+
   const accentColor = 'rgba(21, 120, 102, 1)';
 
   return (
@@ -129,7 +129,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 lineHeight: 1.6,
                 flexGrow: 1,
               }}>
-              {project.description}
+              {description}
             </Typography>
 
             {/* Technologie-Icons */}
@@ -203,6 +203,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 // Hauptkomponente: ProjectsSection
 // ==============
 const ProjectsSection: React.FC = () => {
+  const { t } = useTranslation();
+  const projectKeys = ['join', 'crazy-dog', 'evelike'];
+
   const accentColor = 'rgba(21, 120, 102, 1)';
 
   return (
@@ -239,12 +242,12 @@ const ProjectsSection: React.FC = () => {
               fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
               mb: 6,
             }}>
-            Featured Projects
+            {t('project-section.headline')}
           </Typography>
         </Grid>
         {projects.map((project, index) => (
           <Grid size={{ xs: 12 }} key={index}>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} translationKey={projectKeys[index]} />
           </Grid>
         ))}
       </Grid>
