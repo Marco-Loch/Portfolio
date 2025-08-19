@@ -46,6 +46,23 @@
                 }
         }
     },
+    "validation": {
+        "name": {
+          "min": "Name must be at least 2 characters long."
+        },
+        "email": {
+          "invalid": "Please enter a valid email address."
+        },
+        "message": {
+          "min": "Message must contain at least 10 characters."
+        },
+        "privacy": {
+          "required": "You must accept the privacy policy."
+        }
+    },
+    "form": {
+        "success": "Thank you! Your message has been sent successfully."
+    },
     "contact-section": {
         "contact-me": "Contact me",
         "headline": "Let's work together",
@@ -56,12 +73,12 @@
         "input": {
             "name": "What's your name?",
             "email": "What's your email?",
-            "subject": "How can I help you?"
+            "message": "How can I help you?"
         },
         "placeholder": {
             "name": "Your name goes here",
             "email": "yourmail@email.com",
-            "subject": "Hello Marco, I am interested in.."
+            "message": "Hello Marco, I am interested in.."
         },
         "privacy": {
             "first": "I've read the",

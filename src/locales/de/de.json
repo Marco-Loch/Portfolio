@@ -43,9 +43,26 @@
             },
             "evelike": {
                 "description": "Ein lobbybasiertes online Multiplayer Strategiespiel. Nutzt socket.io zur Echtzeitkommunikation mit einem selbst geschriebenen Node Server."
-      }
-    }
-  },
+            }
+        }
+    },
+    "validation": {
+        "name": {
+        "min": "Der Name muss mindestens 2 Zeichen lang sein."
+        },
+        "email": {
+        "invalid": "Bitte gib eine gültige E-Mail-Adresse ein."
+        },
+        "message": {
+        "min": "Die Nachricht muss mindestens 10 Zeichen enthalten."
+        },
+        "privacy": {
+        "required": "Du musst die Datenschutzbestimmungen akzeptieren."
+        }
+    },
+      "form": {
+        "success": "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet."
+    },
     "contact-section": {
         "contact-me": "Kontaktiere mich",
         "headline": "Lass uns zusammenarbeiten",
@@ -56,12 +73,12 @@
         "input": {
             "name": "Wie heißt du?",
             "email": "Wie lautet deine E-Mail?",
-            "subject": "Wobei kann ich dir helfen?"
+            "message": "Wobei kann ich dir helfen?"
         },
         "placeholder": {
             "name": "Dein Name",
             "email": "deinname@email.com",
-            "subject": "Hallo Marco, ich interessiere mich für..."
+            "message": "Hallo Marco, ich interessiere mich für..."
         },
         "privacy": {
             "first": "Ich habe die",
