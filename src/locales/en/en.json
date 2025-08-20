@@ -91,5 +91,143 @@
         "webdev": "Web Developer",
         "location": "Crailsheim Germany",
         "legal": "Legal Notice"
+    },
+    "imprint-page": {
+        "title": "Imprint",
+        "section1-title": "Information according to § 5 TMG",
+        "contact-title": "Contact"
+    },
+    "privacy-page": {
+        "title": "Privacy Policy",
+        "preamble-title": "Preamble",
+        "toc-title": "Table of Contents",
+        "responsible-person-title": "Responsible person",
+        "processing-oparations-title": "Overview of processing operations",
+        "legal-base-title": "Relevant legal basis",
+        "safety-measures-title": "Safety measures",
+        "transfer-data-title": "Transfer of personal data",
+        "general-storage-title": "General information on data storage and deletion",
+        "rights-data-subjects-title": "Rights of data subjects",
+        "services-hosting-title": "Provision of online services and web hosting",
+        "contact-managment-title": "Contact and inquiry management",
+        "mod-update-title": "Modification and updating",
+        "preamble": {
+            "p1": "With the following privacy policy, we would like to inform you about the types of personal data (hereinafter also referred to as “data”) we process, for what purposes, and to what extent. The privacy policy applies to all processing of personal data carried out by us, both in the context of providing our services and, in particular, on our websites, in mobile applications, and within external online presences, such as our social media profiles (hereinafter collectively referred to as “online offering”).",
+            "p2": "The terms used are not gender-specific.",
+            "p3": "As of August 20, 2025"
+        },
+        "processing-operations": {
+            "p1": "The following overview summarizes the types of data processed and the purposes of their processing, and refers to the data subjects concerned.",
+            "p2": "Types of data processed",
+            "p3": "Categories of data subjects",
+            "p4": "Purposes of processing",
+            "list": {
+                "l1": "Inventory data",
+                "l2": "Contact data",
+                "l3": "Content data",
+                "l4": "Usage data",
+                "l5": "Meta, communication, and procedural data",
+                "l6": "Log data",
+                "l7": "Communication partners",
+                "l8": "Users",
+                "l9": "Communication",
+                "l10": "Security measures",
+                "l11": "Organizational and administrative procedures",
+                "l12": "Feedback",
+                "l13": "Provision of our online services and user-friendliness",
+                "l14": "Information technology infrastructure"
+            }
+        },
+        "legal-base": {
+            "p1": "Relevant legal bases under the GDPR:",
+            "p2": "Below you will find an overview of the legal bases of the GDPR on which we process personal data. Please note that, in addition to the provisions of the GDPR, national data protection regulations may apply in your or our country of residence or establishment. If, in individual cases, more specific legal bases are applicable, we will inform you of these in the privacy notice.",
+            "p3": "National data protection regulations in Germany:",
+            "p4": "In addition to the data protection provisions of the GDPR, national data protection regulations apply in Germany. This includes, in particular, the Federal Data Protection Act (Bundesdatenschutzgesetz – BDSG), which serves to protect against the misuse of personal data in data processing. The BDSG contains specific provisions on the right of access, the right to erasure, the right to object, the processing of special categories of personal data, processing for other purposes, as well as transmission and automated individual decision-making, including profiling. Furthermore, data protection laws of the individual federal states may also apply.",
+            "list": {
+                "strong1": "Performance of a contract and pre-contractual inquiries (Art. 6(1)(b) GDPR)",
+                "strong2": "Legitimate interests (Art. 6(1)(f) GDPR)",
+                "l1": " - Processing is necessary for the performance of a contract to which the data subject is party, or in order to take steps at the request of the data subject prior to entering into a contract.",
+                "l2": " - Processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require the protection of personal data."
+            }
+        },
+        "safety-measures": {
+            "p1": "We take appropriate technical and organizational measures in accordance with legal requirements, taking into account the state of the art, implementation costs, and the nature, scope, circumstances, and purposes of processing, as well as the varying likelihood and severity of threats to the rights and freedoms of natural persons, to ensure a level of protection appropriate to the risk.",
+            "p2": "These measures include, in particular, ensuring the confidentiality, integrity, and availability of data by controlling physical and electronic access to the data as well as access, input, transfer, availability, and separation. Furthermore, we have established procedures that guarantee the exercise of data subjects' rights, the deletion of data, and responses to data breaches. Furthermore, we take the protection of personal data into account during the development and selection of hardware, software, and procedures in accordance with the principle of data protection, through technology design and data protection-friendly default settings.",
+            "p3": "Securing online connections with TLS/SSL encryption technology (HTTPS): We use TLS/SSL encryption technology to protect user data transmitted via our online services from unauthorized access. Secure Sockets Layer (SSL) and Transport Layer Security (TLS) are the cornerstones of secure data transmission on the Internet. These technologies encrypt the information transmitted between the website or app and the user's browser (or between two servers), protecting the data from unauthorized access. TLS, as the more advanced and secure version of SSL, ensures that all data transmissions meet the highest security standards. When a website is secured by an SSL/TLS certificate, this is indicated by the display of HTTPS in the URL. This serves as an indicator to users that their data is being transmitted securely and encrypted."
+        },
+        "transfer-data": {
+            "p1": "As part of our processing of personal data, it may happen that this data is transferred to or disclosed to other bodies, companies, legally independent organizational units, or individuals. The recipients of this data may include, for example, service providers commissioned with IT tasks or providers of services and content that are integrated into a website. In such cases, we comply with the legal requirements and, in particular, conclude appropriate contracts or agreements with the recipients of your data to protect your data."
+        },
+        "general-storage": {
+            "p1": "We delete personal data that we process in accordance with legal requirements as soon as the underlying consent is revoked or there is no further legal basis for processing. This applies to cases where the original purpose of processing no longer applies or the data is no longer needed. Exceptions to this rule exist if legal obligations or special interests require longer storage or archiving of the data.",
+            "p2": "In particular, data that must be retained for commercial or tax reasons, or whose storage is necessary for legal prosecution or to protect the rights of other natural or legal persons, must be archived accordingly.",
+            "p3": "Our privacy policy contains additional information on the storage and deletion of data that applies specifically to certain processing operations.",
+            "p4": "If there are several specifications regarding the retention period or deletion deadlines for a date, the longest period shall always apply. Data that is no longer required for its original purpose but is retained due to legal requirements or other reasons will only be processed for reasons that justify its retention.",
+            "p5": "Storage and deletion of data:",
+            "p6": "The following general deadlines apply to storage and archiving under German law:",
+            "p7": "Term begins at the end of the year:",
+            "p8": "If a period does not expressly begin on a specific date and lasts at least one year, it shall automatically commence at the end of the calendar year in which the event triggering the period occurred. In the case of ongoing contractual relationships in which data is stored, the event triggering the period shall be the date on which the termination or other termination of the legal relationship takes effect.",
+            "list": {
+                "l1": "10 years – retention period for books and records, annual financial statements, inventories, management reports, opening balance sheets, and the work instructions and other organizational documents necessary for their understanding (Section 147 (1) No. 1 in conjunction with (3) AO, Section 14b (1) of the German Value Added Tax Act (UStG), Section 257 (1) No. 1 in conjunction with (4) of the German Commercial Code (HGB)).",
+                "l2": "8 years – accounting documents, such as invoices and expense receipts (Section 147 (1) No. 4 and 4a in conjunction with Section 147 (3) sentence 1 AO and Section 257 (1) No. 4 in conjunction with Section 257 (4) HGB).",
+                "l3": "6 years - Other business documents: commercial or business letters received, copies of commercial or business letters sent, other documents relevant to taxation, e.g., hourly wage slips, operating statements, calculation documents, price tags, but also payroll documents, unless they are already accounting documents, and cash register receipts (Section 147 (1) Nos. 2, 3, 5 in conjunction with (3) AO, Section 257 (1) Nos. 2 and 3 in conjunction with (4) HGB).",
+                "l4": "3 years - Data required to consider potential warranty and damage claims or similar contractual claims and rights, as well as to process related inquiries, based on previous business experience and customary industry practices, will be stored for the duration of the regular statutory limitation period of three years (Sections 195, 199 BGB)."
+            }
+        },
+        "rights-data-subjects": {
+            "p1": "Rights of data subjects under the GDPR:",
+            "p2": "As a data subject, you have various rights under the GDPR, which arise in particular from Articles 15 to 21 GDPR:",
+            "list": {
+                "sl1": "Right to object:",
+                "sl2": "Right of withdrawal for consents:",
+                "sl3": "Right to information:",
+                "sl4": "Right to rectification:",
+                "sl5": "Right to erasure and restriction of processing:",
+                "sl6": "Right to data portability:",
+                "sl7": "Complaint to supervisory authority:",
+                "l1": " You have the right to object at any time, on grounds relating to your particular situation, to the processing of personal data concerning you which is based on Article 6(1)(e) or (f) of the GDPR; this also applies to profiling based on these provisions. If personal data concerning you is processed for direct marketing purposes, you have the right to object at any time to the processing of personal data concerning you for such marketing purposes; this also applies to profiling insofar as it is related to such direct marketing.",
+                "l2": " You have the right to revoke your consent at any time.",
+                "l3": " You have the right to request confirmation as to whether the data in question is being processed and to obtain information about this data, as well as further information and a copy of the data in accordance with legal requirements.",
+                "l4": " In accordance with legal requirements, you have the right to request the completion of data concerning you or the correction of inaccurate data concerning you.",
+                "l5": " In accordance with legal requirements, you have the right to request that data relating to you be deleted immediately or, alternatively, to request that the processing of the data be restricted in accordance with legal requirements.",
+                "l6": " You have the right to receive data concerning you that you have provided to us in a structured, commonly used, and machine-readable format in accordance with legal requirements, or to request that it be transferred to another controller.",
+                "l7": " Without prejudice to any other administrative or judicial remedy, you have the right to lodge a complaint with a supervisory authority, in particular in the Member State of your habitual residence, place of work, or place of the alleged infringement, if you consider that the processing of personal data relating to you infringes the provisions of the GDPR."
+            }
+        },
+        "services-hosting": {
+            "p1": "We process user data in order to provide them with our online services. For this purpose, we process the user's IP address, which is necessary to transmit the content and functions of our online services to the user's browser or end device.",
+            "p2": "Types of data processed:",
+            "p3": "Further information on processing procedures, methods, and services:",
+            "list": {
+                "sl1": "Provision of online services on rented storage space:",
+                "sl2": "Collection of access data and log files:",
+                "l1": "Usage data (e.g., page views and dwell time, click paths, usage intensity and frequency, device types and operating systems used, interactions with content and functions); Meta, communication, and procedural data (e.g., IP addresses, time stamps, identification numbers, persons involved). Log data (e.g., log files relating to logins or the retrieval of data or access times).",
+                "l2": "Affected persons: Users (e.g., website visitors, users of online services).",
+                "l3": "Purposes of processing: Provision of our online offering and user-friendliness; IT infrastructure (operation and provision of information systems and technical devices (computers, servers, etc.)). Security measures.",
+                "l4": "Storage and deletion: Deletion in accordance with the information in the section “General information on data storage and deletion.”",
+                "l5": "Legal basis: Legitimate interests (Art. 6(1)(f) GDPR).",
+                "l6": " To provide our online services, we use storage space, computing capacity, and software that we rent or otherwise obtain from a server provider (also known as a “web host”); legal basis: legitimate interests (Art. 6(1)(f) GDPR).",
+                "l7": " Access to our online offering is logged in the form of so-called “server log files.” Server log files may include the address and name of the websites and files accessed, the date and time of access, the amount of data transferred, notification of successful access, browser type and version, the user's operating system, referrer URL (the previously visited page), and, as a rule, IP addresses and the requesting provider. The server log files can be used for security purposes, e.g. to prevent server overload (especially in the case of malicious attacks, known as DDoS attacks), and to ensure server utilization and stability; legal basis: legitimate interests (Art. 6 (1) (f) GDPR). Deletion of data: Log file information is stored for a maximum of 30 days and then deleted or anonymized. Data that must be retained for evidentiary purposes is excluded from deletion until the respective incident has been finally clarified."
+            }
+        },
+        "contact-managment": {
+            "p1": "When contacting us (e.g. by post, contact form, email, telephone or social media) and within the framework of existing user and business relationships, the details of the persons making the enquiry are processed to the extent necessary to respond to the contact enquiries and any requested measures.",
+            "p2": "Types of data processed:",
+            "p3": "Further information on processing procedures, methods, and services:",
+            "list": {
+                "sl1": "Contact form:",
+                "l1": "Inventory data (e.g., full name, residential address, contact information, customer number, etc.); contact data (e.g., postal and email addresses or telephone numbers); content data (e.g., text or image messages and posts, as well as information relating to them, such as details of authorship or time of creation); Usage data (e.g., page views and dwell time, click paths, usage intensity and frequency, device types and operating systems used, interactions with content and functions). Meta, communication, and procedural data (e.g., IP addresses, time stamps, identification numbers, persons involved).",
+                "l2": "Affected persons: Communication partners.",
+                "l3": "Purposes of processing: Communication; organizational and administrative procedures; feedback (e.g., collecting feedback via online form). Provision of our online offering and user-friendliness.",
+                "l4": "Storage and deletion: Deletion in accordance with the information in the section “General information on data storage and deletion.”",
+                "l5": "Legal basis: Legitimate interests (Art. 6(1)(f) GDPR). Performance of a contract and pre-contractual inquiries (Art. 6(1)(b) GDPR).",
+                "l6": " When you contact us via our contact form, by email, or other means of communication, we process the personal data you provide in order to respond to and process your request. This usually includes information such as your name, contact details, and any other information you provide that is necessary for us to process your request appropriately. We use this data exclusively for the stated purpose of contacting and communicating with you; legal basis: fulfillment of a contract and pre-contractual inquiries (Art. 6 (1) (b) GDPR), legitimate interests (Art. 6 (1) (f) GDPR)."
+            }
+        },
+        "mod-update": {
+            "p1": "We ask you to regularly review the content of our privacy policy. We will amend the privacy policy as soon as changes to the data processing we carry out make this necessary. We will inform you as soon as the changes require action on your part (e.g., consent) or other individual notification.",
+            "p2": "Where we provide addresses and contact information for companies and organizations in this privacy policy, please note that addresses may change over time and we ask that you check the details before contacting them."
+        },
+        "external-link": "Created with the free Datenschutz-Generator.de tool by Dr. Thomas Schwenke."
     }
 }

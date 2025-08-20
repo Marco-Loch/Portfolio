@@ -1,211 +1,12 @@
-import React from 'react';
-import { Box, Typography, Stack, Grid, Paper, Button } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkIcon from '@mui/icons-material/Link';
-
-// Importiere die Technologie-Icons
-import htmlIcon from '../assets/img/thtml.png';
-import cssIcon from '../assets/img/tcss.png';
-import jsIcon from '../assets/img/tjavascript.png';
-import tsIcon from '../assets/img/ttypescript.png';
-import angularIcon from '../assets/img/tangular.png';
-import firebaseIcon from '../assets/img/tfirebase.png';
-import reactIcon from '../assets/img/treact.png';
-
+import { Box, Typography, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import type { FC } from 'react';
 
-import joinProjectImg from '../assets/img/join.png';
-import elPolloLocoProjectImg from '../assets/img/crazydog.png';
-import daBubbleProjectImg from '../assets/img/evelike.png';
+import ProjectCard from '../components/ProjectCard';
+import { projects } from '../data/projects'; // Nur die Daten importieren
 
-// ==============
-// Typdefinitionen
-// ==============
-interface Technology {
-  name: string;
-  icon: string;
-}
-
-interface Project {
-  title: string;
-  description: string;
-  technologies: Technology[];
-  liveLink: string;
-  githubLink: string;
-  image: string;
-}
-
-// Eine Liste aller verfügbaren Technologien für die Projekte
-const allTechnologies = {
-  html: { name: 'HTML', icon: htmlIcon },
-  css: { name: 'CSS', icon: cssIcon },
-  js: { name: 'JavaScript', icon: jsIcon },
-  ts: { name: 'TypeScript', icon: tsIcon },
-  angular: { name: 'Angular', icon: angularIcon },
-  firebase: { name: 'Firebase', icon: firebaseIcon },
-  react: { name: 'React', icon: reactIcon },
-};
-
-// ==============
-// Projektdaten
-// ==============
-const projects: Omit<Project, 'description'>[] = [
-  {
-    title: 'Join',
-    technologies: [
-      allTechnologies.angular,
-      allTechnologies.ts,
-      allTechnologies.html,
-      allTechnologies.css,
-      allTechnologies.firebase,
-    ],
-    liveLink: 'https://marco-loch.developerakademie.net/join/index.html',
-    githubLink: 'https://github.com/Marco-Loch/join',
-    image: joinProjectImg,
-  },
-  {
-    title: 'Crazy Dog',
-    technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
-    liveLink: 'https://marco-loch.developerakademie.net/CrazyDogEng/index.html',
-    githubLink: 'https://github.com/Marco-Loch/2d-Game-DA',
-    image: elPolloLocoProjectImg,
-  },
-  {
-    title: 'EVElike',
-    technologies: [allTechnologies.js, allTechnologies.html, allTechnologies.css, allTechnologies.react],
-    liveLink: 'https://evelike.onrender.com/',
-    githubLink: 'https://github.com/Marco-Loch/EVElike',
-    image: daBubbleProjectImg,
-  },
-];
-
-// ==============
-// Wiederverwendbare Komponente für eine einzelne Projektkarte
-// ==============
-interface ProjectCardProps {
-  project: Omit<Project, 'description'>;
-  translationKey: string; // z.B. 'join', 'crazy-dog', 'evelike'
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, translationKey }) => {
+const ProjectsSection: FC = () => {
   const { t } = useTranslation();
-  const description = t(`project-section.projects.${translationKey}.description`);
-
-  const accentColor = 'rgba(21, 120, 102, 1)';
-
-  return (
-    <Paper
-      sx={{
-        background:
-          'linear-gradient(-130deg, rgba(8, 70, 59, 1) 0%, rgba(27, 27, 27, 1) 50%, rgba(28, 28, 28, 1) 100%)',
-        color: '#FFFFFF',
-        borderRadius: '16px',
-        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
-        p: { xs: 3, md: 5 },
-        position: 'relative',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
-      <Grid container spacing={{ xs: 2, md: 4 }}>
-        {/* Linke Spalte: Projektbeschreibung und Links */}
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Stack spacing={2} sx={{ height: '100%' }}>
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "'Orbitron', sans-serif",
-                fontWeight: 'bold',
-                color: accentColor,
-                fontSize: { xs: '2rem', md: '2.5rem' },
-              }}>
-              {project.title}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontFamily: "'Orbitron', sans-serif",
-                color: 'rgba(255, 255, 255, 0.7)',
-                lineHeight: 1.6,
-                flexGrow: 1,
-              }}>
-              {description}
-            </Typography>
-
-            {/* Technologie-Icons */}
-            <Stack direction="row" spacing={1} flexWrap="wrap">
-              {project.technologies.map((tech, index) => (
-                <Stack key={index} direction="row" alignItems="center" spacing={0.5}>
-                  <Box component="img" src={tech.icon} alt={tech.name} sx={{ width: 24, height: 24 }} />
-                  <Typography variant="body2" sx={{ fontFamily: "'Orbitron', sans-serif", color: 'white' }}>
-                    {tech.name}
-                  </Typography>
-                </Stack>
-              ))}
-            </Stack>
-
-            {/* Buttons für GitHub und Live-Test */}
-            <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<GitHubIcon />}
-                href={project.githubLink}
-                target="_blank"
-                sx={{
-                  color: 'white',
-                  borderColor: accentColor,
-                  borderRadius: '50px',
-                  fontFamily: "'Orbitron', sans-serif",
-                  textTransform: 'none',
-                }}>
-                GitHub
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<LinkIcon />}
-                href={project.liveLink}
-                target="_blank"
-                sx={{
-                  color: 'white',
-                  borderColor: accentColor,
-                  borderRadius: '50px',
-                  fontFamily: "'Orbitron', sans-serif",
-                  textTransform: 'none',
-                }}>
-                Live Test
-              </Button>
-            </Stack>
-          </Stack>
-        </Grid>
-
-        {/* Rechte Spalte: Projektbild */}
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Box
-            component="img"
-            src={project.image}
-            alt={`Screenshot of ${project.title}`}
-            sx={{
-              width: '100%',
-              height: 'auto',
-              borderRadius: '16px',
-              objectFit: 'cover',
-            }}
-          />
-        </Grid>
-      </Grid>
-    </Paper>
-  );
-};
-
-// ==============
-// Hauptkomponente: ProjectsSection
-// ==============
-const ProjectsSection: React.FC = () => {
-  const { t } = useTranslation();
-  const projectKeys = ['join', 'crazy-dog', 'evelike'];
-
   const accentColor = 'rgba(21, 120, 102, 1)';
 
   return (
@@ -222,6 +23,7 @@ const ProjectsSection: React.FC = () => {
         minHeight: '100%',
       }}>
       <Grid container spacing={{ xs: 6, md: 8 }} maxWidth="lg">
+        {/* Sektions-Überschriften */}
         <Grid size={{ xs: 12 }}>
           <Typography
             variant="h6"
@@ -245,9 +47,10 @@ const ProjectsSection: React.FC = () => {
             {t('project-section.headline')}
           </Typography>
         </Grid>
-        {projects.map((project, index) => (
-          <Grid size={{ xs: 12 }} key={index}>
-            <ProjectCard project={project} translationKey={projectKeys[index]} />
+        {/* Projektkarten */}
+        {projects.map(project => (
+          <Grid size={{ xs: 12 }} key={project.id}>
+            <ProjectCard project={project} />
           </Grid>
         ))}
       </Grid>
