@@ -169,7 +169,6 @@ const ContactForm: FC = () => {
         />
 
         {/* Privacy Policy */}
-        {/* Privacy Policy */}
         <Box>
           <FormControlLabel
             control={
