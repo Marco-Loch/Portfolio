@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Typography, Link, Stack } from '@mui/material';
-
-import LogoImage from '../assets/img/faviconML.png';
-
+import { Box, Typography, Stack, Link as MuiLink } from '@mui/material';
+import { Link as TanstackLink } from '@tanstack/react-router';
 import { useTranslation } from 'react-i18next';
+
+import Logo from '../components/Logo';
+import { footerLinks } from '../data/footer-links';
 
 const Footer: React.FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
   const linkColor = 'rgba(255, 255, 255, 0.7)';
-
   const { t } = useTranslation();
 
   return (
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
         spacing={4}>
         {/* Linke Seite: Logo, Beruf und Standort */}
         <Stack spacing={1} alignItems={{ xs: 'center', md: 'flex-start' }}>
-          <Box component="img" src={LogoImage} alt="Lukas Müller Logo" sx={{ width: 40, height: 40, mb: 1 }} />
+          <Logo />
           <Typography
             variant="body2"
             sx={{
@@ -57,34 +57,28 @@ const Footer: React.FC = () => {
 
         {/* Rechte Seite: Links */}
         <Stack spacing={1} alignItems={{ xs: 'center', md: 'flex-end' }}>
-          <Link
-            href="#"
-            color="inherit"
-            underline="none"
-            sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
-            Github
-          </Link>
-          <Link
-            href="#"
-            color="inherit"
-            underline="none"
-            sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
-            Linkedin
-          </Link>
-          <Link
-            href="#"
-            color="inherit"
-            underline="none"
-            sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
-            Email
-          </Link>
-          <Link
-            href="#"
-            color="inherit"
-            underline="none"
-            sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
-            {t('footer-section.legal')}
-          </Link>
+          {footerLinks.map(link => {
+            const linkText = link.translationKey ? t(link.translationKey) : link.text;
+
+            return link.isExternal ? (
+              <MuiLink
+                key={link.id}
+                href={link.href}
+                color="inherit"
+                underline="none"
+                sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
+                {linkText}
+              </MuiLink>
+            ) : (
+              <TanstackLink key={link.id} to={link.href} style={{ textDecoration: 'none' }}>
+                <Typography
+                  variant="body2"
+                  sx={{ fontFamily: "'Orbitron', sans-serif", color: linkColor, '&:hover': { color: 'white' } }}>
+                  {linkText}
+                </Typography>
+              </TanstackLink>
+            );
+          })}
         </Stack>
       </Stack>
     </Box>
