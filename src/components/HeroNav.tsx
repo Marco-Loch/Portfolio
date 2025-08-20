@@ -7,7 +7,7 @@ interface HeroNavProps {
   aboutMeRef: RefObject<HTMLDivElement>;
   skillsRef: RefObject<HTMLDivElement>;
   projectsRef: RefObject<HTMLDivElement>;
-  contactRef: RefObject<HTMLDivElement>;
+  // contactRef: RefObject<HTMLDivElement>;
   scrollToSection: (ref: RefObject<HTMLDivElement>) => void;
 }
 

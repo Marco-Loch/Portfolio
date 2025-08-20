@@ -43,7 +43,6 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
         aboutMeRef={aboutMeRef}
         skillsRef={skillsRef}
         projectsRef={projectsRef}
-        contactRef={contactRef}
         scrollToSection={scrollToSection}
       />
 
