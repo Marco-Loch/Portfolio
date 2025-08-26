@@ -152,7 +152,7 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
               color: 'white',
             },
           }}>
-          marco.loch@email.com
+          mail@marco-loch.de
         </Typography>
         <Box sx={{ width: '1px', height: '50px', bgcolor: 'currentColor' }} />
         <GitHubLink />

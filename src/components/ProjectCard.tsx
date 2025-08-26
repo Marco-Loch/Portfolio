@@ -4,7 +4,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
 
-import type { Project } from '../data/projects'; // Den neuen Projekttyp importieren
+import type { Project } from '../data/projects';
 
 interface ProjectCardProps {
   project: Project;
