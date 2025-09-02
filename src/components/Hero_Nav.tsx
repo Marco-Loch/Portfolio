@@ -1,4 +1,4 @@
-import type { FC, RefObject } from 'react';
+import type { FC } from 'react';
 import { Box, Stack, Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo';

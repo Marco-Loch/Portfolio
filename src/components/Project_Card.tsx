@@ -18,8 +18,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <Paper
       sx={{
-        background:
-          'linear-gradient(-130deg, rgba(8, 70, 59, 1) 0%, rgba(27, 27, 27, 1) 50%, rgba(28, 28, 28, 1) 100%)',
+        background: 'linear-gradient(-130deg, rgba(8, 70, 59, 1) 0%, rgba(5, 43, 36, 1) 50%, rgba(3, 25, 20, 1) 100%)',
         color: '#FFFFFF',
         borderRadius: '16px',
         boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
