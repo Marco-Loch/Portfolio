@@ -1,20 +1,10 @@
-import React from 'react';
 import { Box, Typography, Stack, Paper } from '@mui/material';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
-
-interface AboutPoint {
-  id: string;
-  icon: React.ElementType;
-  text: string;
-}
-
-interface AboutMeInfoboxProps {
-  accentColor: string;
-}
+import type { AboutPoint, AboutMeInfoboxProps } from '../types/about_me_type';
 
 const AboutMeInfobox: FC<AboutMeInfoboxProps> = ({ accentColor }) => {
   const { t } = useTranslation();
