@@ -1,13 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
-
-interface MouseFollowShadowProps {
-  children: React.ReactNode;
-  shadowColor?: string;
-  shadowSize?: number;
-  blur?: number;
-  containerBackground?: string;
-}
+import type { MouseFollowShadowProps } from '../../types/mouse_follow_shadow_type';
 
 const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
   children,
