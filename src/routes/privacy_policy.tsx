@@ -2,41 +2,6 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Box, Typography, Container, Link as MuiLink, List, ListItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-// Interne Komponente zur Formatierung der Abschnitte
-const Section = ({
-  id,
-  title,
-  component = 'h2',
-  children,
-}: {
-  id?: string;
-  title: string;
-  component?: 'h2' | 'h3';
-  children: React.ReactNode;
-}) => (
-  <Box id={id} component="section" sx={{ mb: 4, mt: 4 }}>
-    <Typography
-      variant={component === 'h2' ? 'h4' : 'h5'}
-      component={component}
-      sx={{
-        fontFamily: "'Orbitron', sans-serif",
-        color: 'rgba(21, 120, 102, 1)',
-        fontWeight: 'bold',
-        mb: 2,
-      }}>
-      {title}
-    </Typography>
-    {children}
-  </Box>
-);
-
-// Interne Komponente für Absätze
-const Paragraph = ({ children }: { children: React.ReactNode }) => (
-  <Typography variant="body1" sx={{ color: 'white', mb: 2 }}>
-    {children}
-  </Typography>
-);
-
 // Hauptkomponente für die Datenschutzerklärung
 function PrivacyPolicyPage() {
   const { t } = useTranslation();
@@ -343,6 +308,41 @@ function PrivacyPolicyPage() {
     </Container>
   );
 }
+
+// Interne Komponente zur Formatierung der Abschnitte
+const Section = ({
+  id,
+  title,
+  component = 'h2',
+  children,
+}: {
+  id?: string;
+  title: string;
+  component?: 'h2' | 'h3';
+  children: React.ReactNode;
+}) => (
+  <Box id={id} component="section" sx={{ mb: 4, mt: 4 }}>
+    <Typography
+      variant={component === 'h2' ? 'h4' : 'h5'}
+      component={component}
+      sx={{
+        fontFamily: "'Orbitron', sans-serif",
+        color: 'rgba(21, 120, 102, 1)',
+        fontWeight: 'bold',
+        mb: 2,
+      }}>
+      {title}
+    </Typography>
+    {children}
+  </Box>
+);
+
+// Interne Komponente für Absätze
+const Paragraph = ({ children }: { children: React.ReactNode }) => (
+  <Typography variant="body1" sx={{ color: 'white', mb: 2 }}>
+    {children}
+  </Typography>
+);
 
 export const Route = createFileRoute('/privacy_policy')({
   component: PrivacyPolicyPage,
