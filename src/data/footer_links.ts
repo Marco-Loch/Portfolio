@@ -1,10 +1,4 @@
-export interface FooterLink {
-  id: string;
-  text?: string;
-  translationKey?: string;
-  href: string;
-  isExternal?: boolean;
-}
+import type { FooterLink } from '../types/footer_types';
 
 export const footerLinks: FooterLink[] = [
   {
