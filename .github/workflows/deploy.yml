@@ -34,5 +34,5 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: dist/     
-          server-dir: /htdocs/marco-loch.de
+          server-dir: /marco-loch.de
           dangerous-clean-slate: true
