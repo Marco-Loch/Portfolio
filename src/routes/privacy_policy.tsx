@@ -14,6 +14,7 @@ function PrivacyPolicyPage() {
         variant="h2"
         component="h1"
         sx={{
+          hyphens: 'auto',
           fontFamily: orbitron,
           color: accentColor,
           fontWeight: 'bold',
