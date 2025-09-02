@@ -1,4 +1,4 @@
-import type { FooterLink } from '../types/footer_types';
+import type { FooterLink } from '../types/footer_type';
 
 export const footerLinks: FooterLink[] = [
   {

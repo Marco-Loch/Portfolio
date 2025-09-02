@@ -10,7 +10,7 @@ import joinProjectImg from '../assets/img/join.png';
 import crazyDogImg from '../assets/img/crazydog.png';
 import eveLinkeImg from '../assets/img/evelike.png';
 
-import type { Project } from '../types/project_types';
+import type { Project } from '../types/project_type';
 
 // ==============
 // Daten für die Technologien
