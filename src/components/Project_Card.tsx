@@ -4,11 +4,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
 
-import type { Project } from '../types/project_type';
-
-interface ProjectCardProps {
-  project: Project;
-}
+import type { ProjectCardProps } from '../types/project_type';
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   const { t } = useTranslation();

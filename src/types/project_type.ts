@@ -13,3 +13,7 @@ export interface Project {
   githubLink: string;
   image: string;
 }
+
+export interface ProjectCardProps {
+  project: Project;
+}
