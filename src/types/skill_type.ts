@@ -3,3 +3,7 @@ export interface Skill {
   name: string;
   icon: string;
 }
+
+export interface SkillCardProps {
+  skill: Skill;
+}

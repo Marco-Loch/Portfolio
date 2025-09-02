@@ -1,10 +1,6 @@
 import { Box, Stack } from '@mui/material';
 import type { FC } from 'react';
-import type { Skill } from '../data/skills';
-
-interface SkillCardProps {
-  skill: Skill;
-}
+import type { SkillCardProps } from '../types/skill_type';
 
 const SkillCard: FC<SkillCardProps> = ({ skill }) => (
   <Stack
