@@ -3,10 +3,7 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import ScrollContext from '../context/Scroll_Context';
-
-interface SkillsInfoboxProps {
-  accentColor: string;
-}
+import type { SkillsInfoboxProps } from '../types/skill_infobox_type';
 
 const SkillsInfobox: FC<SkillsInfoboxProps> = ({ accentColor }) => {
   const { t } = useTranslation();
