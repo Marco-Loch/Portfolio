@@ -6,7 +6,6 @@ import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
 
-// Wir definieren die Typen hier, da sie nur für diese Komponente relevant sind.
 interface AboutPoint {
   id: string;
   icon: React.ElementType;

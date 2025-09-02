@@ -20,6 +20,7 @@ const ContactInfo: FC = () => {
           color: 'white',
           fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
           lineHeight: 1.1,
+          hyphens: 'auto',
         }}>
         {t('contact-section.headline')}
       </Typography>

@@ -15,7 +15,6 @@ import {
 } from '@mui/material';
 import { Link as TanstackLink } from '@tanstack/react-router';
 
-// Schema für Validierung
 const createContactSchema = (t: (key: string) => string) =>
   z.object({
     name: z.string().min(2, { message: t('validation.name.min') }),
@@ -111,6 +110,22 @@ const ContactForm: FC = () => {
                 fontFamily: orbitron,
                 color: 'rgba(255, 255, 255, 0.7)',
                 borderBottom: `1px solid ${errors.name ? 'red' : borderColor}`,
+                '&::placeholder': {
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  opacity: 1,
+                },
+                '&:focus': {
+                  color: accentColor,
+                },
+              },
+            },
+            inputLabel: {
+              sx: {
+                fontFamily: orbitron,
+                color: 'rgba(255,255,255,0.6)',
+                '&.Mui-focused': {
+                  color: accentColor,
+                },
               },
             },
             formHelperText: { sx: { fontFamily: orbitron } },
@@ -136,6 +151,22 @@ const ContactForm: FC = () => {
                 fontFamily: orbitron,
                 color: 'rgba(255, 255, 255, 0.7)',
                 borderBottom: `1px solid ${errors.name ? 'red' : borderColor}`,
+                '&::placeholder': {
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  opacity: 1,
+                },
+                '&:focus': {
+                  color: accentColor,
+                },
+              },
+            },
+            inputLabel: {
+              sx: {
+                fontFamily: orbitron,
+                color: 'rgba(255,255,255,0.6)',
+                '&.Mui-focused': {
+                  color: accentColor,
+                },
               },
             },
             formHelperText: { sx: { fontFamily: orbitron } },
@@ -162,6 +193,22 @@ const ContactForm: FC = () => {
                 fontFamily: orbitron,
                 color: 'rgba(255, 255, 255, 0.7)',
                 borderBottom: `1px solid ${errors.name ? 'red' : borderColor}`,
+                '&::placeholder': {
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  opacity: 1,
+                },
+                '&:focus': {
+                  color: accentColor,
+                },
+              },
+            },
+            inputLabel: {
+              sx: {
+                fontFamily: orbitron,
+                color: 'rgba(255,255,255,0.6)',
+                '&.Mui-focused': {
+                  color: accentColor,
+                },
               },
             },
             formHelperText: { sx: { fontFamily: orbitron } },

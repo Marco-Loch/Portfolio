@@ -35,7 +35,6 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
     if (currentContainer) {
       currentContainer.addEventListener('mousemove', handleMouseMove);
 
-      // Beobachte die Größe des Containers, um die Schattenhöhe anzupassen
       const resizeObserver = new ResizeObserver(entries => {
         for (let entry of entries) {
           if (entry.target === currentContainer) {
@@ -50,7 +49,6 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
         resizeObserver.disconnect();
       };
     }
-    // Abhängigkeit vom containerRef.current ist wichtig, um den Listener korrekt hinzuzufügen/entfernen
   }, [containerRef.current]);
 
   const backgroundStyle = {
@@ -63,7 +61,6 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
     top: 0,
     left: 0,
     width: '100%',
-    // Höhe des Schattens basiert auf der tatsächlichen Höhe des Containers
     height: containerHeight > 0 ? `${containerHeight}px` : '100%',
     zIndex: 2,
   };
@@ -74,20 +71,12 @@ const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
       ref={containerRef}
       sx={{
         position: 'relative',
-        minHeight: '100vh', // Mindesthöhe, damit es bei wenig Inhalt nicht zu klein ist
+        minHeight: '100vh',
         background: containerBackground,
-        // Die eigentliche Höhe wird durch den Inhalt bestimmt
-        // Keine feste Höhe hier mehr, damit der Inhalt scrollen kann
       }}>
-      {/* Der Schatten-Layer, der jetzt die Höhe des gesamten Inhalts abdeckt */}
       <Box sx={backgroundStyle} />
 
-      {/* Die Kind-Elemente (HeroSection, AboutMeSection, etc.) werden hier gerendert */}
-      <Box sx={{ position: 'relative', zIndex: 1 }}>
-        {' '}
-        {/* Wichtig: Kinder über dem Schatten platzieren */}
-        {children}
-      </Box>
+      <Box sx={{ position: 'relative', zIndex: 1 }}> {children}</Box>
     </Box>
   );
 };
