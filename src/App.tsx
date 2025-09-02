@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <HeroSection aboutMeRef={aboutMeRef} skillsRef={skillsRef} projectsRef={projectsRef} contactRef={contactRef} />
+      <HeroSection />
       <div ref={aboutMeRef}>
         <AboutMeSection />
       </div>

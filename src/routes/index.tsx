@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import HeroSection from '../sections/hero_section';
 import AboutMeSection from '../sections/about_me_section';
 import SkillsSection from '../sections/skills_section';
@@ -21,13 +21,15 @@ function HomePage() {
     });
   };
 
-  const scrollContextValue = {
-    aboutMeRef,
-    skillsRef,
-    projectsRef,
-    contactRef,
-    scrollToSection,
-  };
+  const scrollContextValue = useMemo(() => {
+    return {
+      aboutMeRef,
+      skillsRef,
+      projectsRef,
+      contactRef,
+      scrollToSection,
+    };
+  }, [aboutMeRef, skillsRef, projectsRef, contactRef, scrollToSection]);
 
   return (
     <ScrollContext.Provider value={scrollContextValue}>
