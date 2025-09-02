@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import type { FC } from 'react';
 import { skills } from '../data/skills';
-import SkillCard from './SkillCard';
+import SkillCard from './Skill_Card';
 
 const SkillsGrid: FC = () => {
   return (

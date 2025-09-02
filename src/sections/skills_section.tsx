@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material';
 import type { FC } from 'react';
-import SkillsInfobox from '../components/SkillsInfobox';
-import SkillsGrid from '../components/SkillsGrid';
+import SkillsInfobox from '../components/Skills_Infobox';
+import SkillsGrid from '../components/Skills_Grid';
 
 const SkillsSection: FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';

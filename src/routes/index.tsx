@@ -6,6 +6,7 @@ import SkillsSection from '../sections/skills_section';
 import ProjectsSection from '../sections/projects_section';
 import ContactSection from '../sections/contact_section';
 import Footer from '../sections/footer_section';
+import ScrollContext from '../context/Scroll_Context';
 
 function HomePage() {
   const aboutMeRef = useRef<HTMLDivElement>(null);
@@ -13,9 +14,24 @@ function HomePage() {
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement> | null) => {
+    ref?.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
+  const scrollContextValue = {
+    aboutMeRef,
+    skillsRef,
+    projectsRef,
+    contactRef,
+    scrollToSection,
+  };
+
   return (
-    <>
-      <HeroSection aboutMeRef={aboutMeRef} skillsRef={skillsRef} projectsRef={projectsRef} contactRef={contactRef} />
+    <ScrollContext.Provider value={scrollContextValue}>
+      <HeroSection />
       <div ref={aboutMeRef}>
         <AboutMeSection />
       </div>
@@ -29,7 +45,7 @@ function HomePage() {
         <ContactSection />
       </div>
       <Footer />
-    </>
+    </ScrollContext.Provider>
   );
 }
 

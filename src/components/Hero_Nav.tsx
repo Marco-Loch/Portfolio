@@ -2,16 +2,12 @@ import type { FC, RefObject } from 'react';
 import { Box, Stack, Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo';
+import { useContext } from 'react';
+import ScrollContext from '../context/Scroll_Context';
 
-interface HeroNavProps {
-  aboutMeRef: RefObject<HTMLDivElement>;
-  skillsRef: RefObject<HTMLDivElement>;
-  projectsRef: RefObject<HTMLDivElement>;
-  scrollToSection: (ref: RefObject<HTMLDivElement>) => void;
-}
-
-const HeroNav: FC<HeroNavProps> = ({ aboutMeRef, skillsRef, projectsRef, scrollToSection }) => {
+const HeroNav: FC = () => {
   const { t, i18n } = useTranslation();
+  const { aboutMeRef, skillsRef, projectsRef, scrollToSection } = useContext(ScrollContext);
 
   const setLanguage = async (lang: string) => {
     await i18n.changeLanguage(lang);

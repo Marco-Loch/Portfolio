@@ -2,27 +2,14 @@ import type { FC, RefObject } from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Ticker from '../components/Ticker';
-import HeroNav from '../components/HeroNav';
+import HeroNav from '../components/Hero_Nav';
 import { ArrowDownwardIcon, GitHubLink, LinkedInLink } from '../components/Icons';
+import { useContext } from 'react';
+import ScrollContext from '../context/Scroll_Context';
 
-interface HeroSectionProps {
-  aboutMeRef: RefObject<HTMLDivElement>;
-  skillsRef: RefObject<HTMLDivElement>;
-  projectsRef: RefObject<HTMLDivElement>;
-  contactRef: RefObject<HTMLDivElement>;
-}
-
-const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef, contactRef }) => {
+const HeroSection: FC = () => {
   const { t } = useTranslation();
-
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
+  const { projectsRef, contactRef, scrollToSection } = useContext(ScrollContext);
 
   return (
     <Box
@@ -39,12 +26,7 @@ const HeroSection: FC<HeroSectionProps> = ({ aboutMeRef, skillsRef, projectsRef,
         px: { xs: 2, md: 4 },
         overflowX: 'hidden',
       }}>
-      <HeroNav
-        aboutMeRef={aboutMeRef}
-        skillsRef={skillsRef}
-        projectsRef={projectsRef}
-        scrollToSection={scrollToSection}
-      />
+      <HeroNav />
 
       {/* Zentraler Inhalt */}
       <Box sx={{ textAlign: 'center', zIndex: 1 }}>

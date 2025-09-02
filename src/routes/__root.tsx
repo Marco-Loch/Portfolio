@@ -1,5 +1,5 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router';
-import MouseFollowShadow from '../components/MouseFollowShadow/MouseFollowShadow';
+import MouseFollowShadow from '../components/MouseFollowShadow/Mouse_Follow_Shadow';
 
 export const Route = createRootRoute({
   component: () => (

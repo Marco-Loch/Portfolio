@@ -4,7 +4,7 @@ import { Link as TanstackLink } from '@tanstack/react-router';
 import { useTranslation } from 'react-i18next';
 
 import Logo from '../components/Logo';
-import { footerLinks } from '../data/footer-links';
+import { footerLinks } from '../data/footer_links';
 
 const Footer: React.FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';

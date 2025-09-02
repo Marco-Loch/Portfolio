@@ -2,7 +2,7 @@ import { Box, Typography, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
 
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/Project_Card';
 import { projects } from '../data/projects'; // Nur die Daten importieren
 
 const ProjectsSection: FC = () => {

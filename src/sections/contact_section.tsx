@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Box, Stack } from '@mui/material';
-import ContactInfo from '../components/ContactInfo';
-import ContactForm from '../components/ContactForm';
+import ContactInfo from '../components/Contact_Info';
+import ContactForm from '../components/Contact_Form';
 
 const ContactSection: FC = () => {
   return (

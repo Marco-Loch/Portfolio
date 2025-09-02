@@ -1,6 +1,6 @@
 import { Box, Grid } from '@mui/material';
-import AboutMeInfobox from '../components/AboutMeInfobox';
-import AboutMeImage from '../components/AboutMeImage';
+import AboutMeInfobox from '../components/About_Me_Infobox';
+import AboutMeImage from '../components/About_Me_Image';
 
 const AboutMeSection = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';

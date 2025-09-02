@@ -1,6 +1,8 @@
 import { Box, Typography, Paper, Button } from '@mui/material';
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useContext } from 'react';
+import ScrollContext from '../context/Scroll_Context';
 
 interface SkillsInfoboxProps {
   accentColor: string;
@@ -8,6 +10,7 @@ interface SkillsInfoboxProps {
 
 const SkillsInfobox: FC<SkillsInfoboxProps> = ({ accentColor }) => {
   const { t } = useTranslation();
+  const { contactRef, scrollToSection } = useContext(ScrollContext);
 
   return (
     <Box>
@@ -70,6 +73,7 @@ const SkillsInfobox: FC<SkillsInfoboxProps> = ({ accentColor }) => {
           {t('skills-section.textbox.looking-forward')}
         </Typography>
         <Button
+          onClick={() => scrollToSection(contactRef)}
           variant="outlined"
           size="large"
           sx={{
