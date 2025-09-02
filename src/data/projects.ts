@@ -10,24 +10,7 @@ import joinProjectImg from '../assets/img/join.png';
 import crazyDogImg from '../assets/img/crazydog.png';
 import eveLinkeImg from '../assets/img/evelike.png';
 
-// ==============
-// Typdefinitionen
-// ==============
-export interface Technology {
-  name: string;
-  icon: string;
-  id: string;
-}
-
-export interface Project {
-  id: string;
-  title: string;
-  translationKey: string;
-  technologies: Technology[];
-  liveLink: string;
-  githubLink: string;
-  image: string;
-}
+import type { Project } from '../types/project_types';
 
 // ==============
 // Daten für die Technologien
