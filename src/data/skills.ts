@@ -9,12 +9,7 @@ import gitIcon from '../assets/img/git.png';
 import restApiIcon from '../assets/img/restapi.png';
 import scrumIcon from '../assets/img/scrum.png';
 import growthMindsetIcon from '../assets/img/growthmindset.png';
-
-export interface Skill {
-  id: string;
-  name: string;
-  icon: string;
-}
+import type { Skill } from '../types/skill_type';
 
 export const skills: Skill[] = [
   { id: 'html', name: 'HTML', icon: htmlIcon },
