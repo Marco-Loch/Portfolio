@@ -1,38 +1,38 @@
-name: Build and Deploy
+name: Build and Deploy (Vite → All-inkl)
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
-      - name: Install dependencies
+      - name: Install
         run: npm ci
 
-      - name: Build project
+      - name: Build
         run: npm run build
 
-      - name: Deploy to All-Inkl via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
+          protocol: ftps          
           port: 21
-          local-dir: dist/     
-          server-dir: /marco-loch.de
-          dangerous-clean-slate: true
+          local-dir: dist/        
+          server-dir: /www/htdocs/w020a54e/marco-loch.de/
+          log-level: standard
