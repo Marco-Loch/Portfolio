@@ -35,4 +35,4 @@ jobs:
           port: 21
           local-dir: dist/        
           server-dir: marco-loch.de/
-          log-level: standard
+          log-level: verbose
