@@ -12,7 +12,7 @@ function PrivacyPolicyPage() {
     <Container sx={{ color: 'white', py: 10 }}>
       <Typography
         variant="h2"
-        component="h1"
+        component="h2"
         sx={{
           hyphens: 'auto',
           fontFamily: orbitron,
