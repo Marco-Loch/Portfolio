@@ -45,7 +45,6 @@ const ContactForm: FC = () => {
   const borderColor = 'rgba(255, 255, 255, 0.2)';
   const orbitron = "'Orbitron', sans-serif";
 
-  // Nur Werte speichern, keine Validierung hier
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     const fieldName = name as keyof ContactFormInputs;
@@ -71,10 +70,21 @@ const ContactForm: FC = () => {
     }
 
     try {
-      console.log('Form data valid:', validationResult.data);
-      // Hier API-Aufruf-Logik
-      setFormStatus('success');
-    } catch {
+      const response = await fetch('https://marco-loch.de/sendmail.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validationResult.data),
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+      } else {
+        throw new Error('Server response was not ok.');
+      }
+    } catch (error) {
+      console.error('Failed to send message:', error);
       setFormStatus('error');
     }
   };
