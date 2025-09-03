@@ -34,5 +34,5 @@ jobs:
           protocol: ftps          
           port: 21
           local-dir: dist/        
-          server-dir: /www/htdocs/w020a54e/marco-loch.de/
+          server-dir: /marco-loch.de/
           log-level: standard
