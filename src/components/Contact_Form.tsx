@@ -45,23 +45,13 @@ const ContactForm: FC = () => {
   const borderColor = 'rgba(255, 255, 255, 0.2)';
   const orbitron = "'Orbitron', sans-serif";
 
-  const validateField = (name: keyof ContactFormInputs, value: any) => {
-    const singleSchema = contactSchema.pick({ [name]: true });
-    const result = singleSchema.safeParse({ [name]: value });
-    if (!result.success) {
-      setErrors(prev => ({ ...prev, [name]: result.error.issues[0].message }));
-    } else {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
-    }
-  };
-
+  // Nur Werte speichern, keine Validierung hier
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     const fieldName = name as keyof ContactFormInputs;
     const fieldValue = type === 'checkbox' ? checked : value;
 
     setFormData(prev => ({ ...prev, [fieldName]: fieldValue }));
-    validateField(fieldName, fieldValue);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -150,7 +140,7 @@ const ContactForm: FC = () => {
               sx: {
                 fontFamily: orbitron,
                 color: 'rgba(255, 255, 255, 0.7)',
-                borderBottom: `1px solid ${errors.name ? 'red' : borderColor}`,
+                borderBottom: `1px solid ${errors.email ? 'red' : borderColor}`,
                 '&::placeholder': {
                   color: 'rgba(255, 255, 255, 0.6)',
                   opacity: 1,
@@ -192,7 +182,7 @@ const ContactForm: FC = () => {
               sx: {
                 fontFamily: orbitron,
                 color: 'rgba(255, 255, 255, 0.7)',
-                borderBottom: `1px solid ${errors.name ? 'red' : borderColor}`,
+                borderBottom: `1px solid ${errors.message ? 'red' : borderColor}`,
                 '&::placeholder': {
                   color: 'rgba(255, 255, 255, 0.6)',
                   opacity: 1,
