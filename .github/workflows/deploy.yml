@@ -35,4 +35,5 @@ jobs:
           port: 21
           local-dir: dist/        
           server-dir: marco-loch.de/
+          security: 'loose'
           log-level: verbose
