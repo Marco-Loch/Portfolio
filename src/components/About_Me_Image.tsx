@@ -1,11 +1,12 @@
 import { Box } from '@mui/material';
 import type { FC } from 'react';
+import meImage from '../assets/img/me.jpeg';
 
 const AboutMeImage: FC = () => {
   return (
     <Box
       component="img"
-      src="https://placehold.co/600x750/2a2a2a/ffffff?text=Dein+Bild+hier"
+      src={meImage}
       alt="Ein Bild von Marco Loch"
       sx={{
         width: '100%',
@@ -13,6 +14,13 @@ const AboutMeImage: FC = () => {
         borderRadius: '16px',
         objectFit: 'cover',
         boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+        filter: 'grayscale(100%)',
+        transition: 'filter 0.6s ease',
+        '@media (hover: hover)': {
+          '&:hover': {
+            filter: 'grayscale(0%)',
+          },
+        },
       }}
     />
   );
