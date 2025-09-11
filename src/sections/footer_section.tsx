@@ -8,7 +8,7 @@ import { footerLinks } from '../data/footer_links';
 
 const Footer: React.FC = () => {
   const accentColor = 'rgba(21, 120, 102, 1)';
-  const linkColor = 'rgba(255, 255, 255, 0.7)';
+  const linkColor = 'rgba(148, 148, 148, 0.85)';
   const { t } = useTranslation();
 
   return (

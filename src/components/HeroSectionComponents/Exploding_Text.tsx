@@ -20,13 +20,13 @@ const ExplodingText: React.FC = () => {
       ease: 'power3.out',
       onComplete: () => {
         gsap.to(letters, {
-          duration: 0.8,
+          duration: 1.8,
           x: 0,
           y: 0,
           rotation: 0,
           opacity: 1,
           stagger: 0.02,
-          ease: 'elastic.out(1, 0.5)',
+          ease: 'elastic.out(1, 1.5)',
         });
       },
     });

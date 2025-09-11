@@ -14,12 +14,6 @@ export const footerLinks: FooterLink[] = [
     isExternal: true,
   },
   {
-    id: 'email',
-    text: 'Email',
-    href: '#',
-    isExternal: true,
-  },
-  {
     id: 'legal',
     translationKey: 'footer-section.legal',
     href: '/impressum',
