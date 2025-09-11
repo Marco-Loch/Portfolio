@@ -5,6 +5,7 @@ import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
 import type { AboutPoint, AboutMeInfoboxProps } from '../types/about_me_type';
+import { motion } from 'framer-motion';
 
 const AboutMeInfobox: FC<AboutMeInfoboxProps> = ({ accentColor }) => {
   const { t } = useTranslation();
@@ -28,64 +29,69 @@ const AboutMeInfobox: FC<AboutMeInfoboxProps> = ({ accentColor }) => {
   ];
 
   return (
-    <Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontFamily: "'Orbitron', sans-serif",
-          color: accentColor,
-          fontWeight: 'bold',
-          mb: 1,
-        }}>
-        {t('about-me-section.who-am-i')}
-      </Typography>
-
-      <Paper
-        elevation={0}
-        sx={{
-          border: `2px solid ${accentColor}`,
-          borderRadius: '16px',
-          p: 4,
-          backgroundColor: 'rgba(8, 70, 59, 0.6)',
-        }}>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}>
+      <Box>
         <Typography
-          variant="h2"
+          variant="h6"
           sx={{
             fontFamily: "'Orbitron', sans-serif",
-            fontWeight: 'bold',
             color: accentColor,
-            mb: 4,
+            fontWeight: 'bold',
+            mb: 1,
           }}>
-          {t('about-me-section.textbox.headline')}
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Orbitron', sans-serif",
-            color: 'rgba(255, 255, 255, 0.8)',
-            mb: 4,
-          }}>
-          {t('about-me-section.textbox.introduction')}
+          {t('about-me-section.who-am-i')}
         </Typography>
 
-        <Stack spacing={3}>
-          {aboutPoints.map(point => (
-            <Stack direction="row" spacing={2} key={point.id} alignItems="flex-start">
-              <Box sx={{ color: accentColor, mt: '4px' }}>
-                <point.icon />
-              </Box>
-              <Typography
-                sx={{
-                  fontFamily: "'Orbitron', sans-serif",
-                  color: 'rgba(255, 255, 255, 0.7)',
-                }}>
-                {point.text}
-              </Typography>
-            </Stack>
-          ))}
-        </Stack>
-      </Paper>
-    </Box>
+        <Paper
+          elevation={0}
+          sx={{
+            border: `2px solid ${accentColor}`,
+            borderRadius: '16px',
+            p: 4,
+            backgroundColor: 'rgba(8, 70, 59, 0.6)',
+          }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "'Orbitron', sans-serif",
+              fontWeight: 'bold',
+              color: accentColor,
+              mb: 4,
+            }}>
+            {t('about-me-section.textbox.headline')}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Orbitron', sans-serif",
+              color: 'rgba(255, 255, 255, 0.8)',
+              mb: 4,
+            }}>
+            {t('about-me-section.textbox.introduction')}
+          </Typography>
+
+          <Stack spacing={3}>
+            {aboutPoints.map(point => (
+              <Stack direction="row" spacing={2} key={point.id} alignItems="flex-start">
+                <Box sx={{ color: accentColor, mt: '4px' }}>
+                  <point.icon />
+                </Box>
+                <Typography
+                  sx={{
+                    fontFamily: "'Orbitron', sans-serif",
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  }}>
+                  {point.text}
+                </Typography>
+              </Stack>
+            ))}
+          </Stack>
+        </Paper>
+      </Box>
+    </motion.div>
   );
 };
 

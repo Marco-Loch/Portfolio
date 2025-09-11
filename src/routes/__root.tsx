@@ -6,7 +6,7 @@ export const Route = createRootRoute({
     <MouseFollowShadow
       shadowColor="rgba(61, 207, 182, 0.5)"
       shadowSize={50}
-      blur={50}
+      blur={70}
       containerBackground="linear-gradient(135deg, rgba(8, 70, 59, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 28, 28, 1) 100%)">
       <Outlet />
     </MouseFollowShadow>

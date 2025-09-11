@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import gsap from 'gsap';
 
 const ExplodingText: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseEnter = () => {
+  const explodeAndAssemble = () => {
     if (!textRef.current) return;
 
     const letters = textRef.current.querySelectorAll('span');
@@ -20,17 +20,21 @@ const ExplodingText: React.FC = () => {
       ease: 'power3.out',
       onComplete: () => {
         gsap.to(letters, {
-          duration: 1.8,
+          duration: 0.8,
           x: 0,
           y: 0,
           rotation: 0,
           opacity: 1,
           stagger: 0.02,
-          ease: 'elastic.out(1, 0.5)',
+          ease: 'elastic.out(1, 1.5)',
         });
       },
     });
   };
+
+  useEffect(() => {
+    explodeAndAssemble();
+  }, []);
 
   return (
     <Typography
@@ -45,14 +49,14 @@ const ExplodingText: React.FC = () => {
         cursor: 'pointer',
         display: 'inline-block',
       }}
-      onMouseEnter={handleMouseEnter}>
+      onMouseEnter={explodeAndAssemble}>
       <div ref={textRef}>
         {'Marco Loch'.split('').map((char, i) => (
           <span
             key={i}
             style={{
               display: 'inline-block',
-              whiteSpace: 'pre',
+              whiteSpace: 'pre', // wichtig für Leerzeichen
             }}>
             {char}
           </span>
