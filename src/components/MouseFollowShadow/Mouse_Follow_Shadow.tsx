@@ -5,8 +5,8 @@ import type { MouseFollowShadowProps } from '../../types/mouse_follow_shadow_typ
 const MouseFollowShadow: React.FC<MouseFollowShadowProps> = ({
   children,
   shadowColor = 'rgba(61, 207, 182, 0.5)',
-  shadowSize = 200,
-  blur = 100,
+  shadowSize = 50,
+  blur = 50,
   containerBackground,
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

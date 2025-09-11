@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Button, Stack } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import type { HeroMainContentProps } from '../../types/hero_section_type';
+import ExplodingText from './Exploding_Text';
 
 const HeroMainContent: React.FC<HeroMainContentProps> = ({ projectsRef, contactRef, scrollToSection }) => {
   const { t } = useTranslation();
@@ -17,17 +18,7 @@ const HeroMainContent: React.FC<HeroMainContentProps> = ({ projectsRef, contactR
         }}>
         {t('hero-section.frontenddev')}
       </Typography>
-      <Typography
-        variant="h1"
-        sx={{
-          fontFamily: "'Orbitron', sans-serif",
-          fontWeight: 700,
-          fontSize: { xs: '3.5rem', sm: '5rem', md: '7rem' },
-          letterSpacing: '-0.02em',
-          lineHeight: 1.1,
-        }}>
-        Marco Loch
-      </Typography>
+      <ExplodingText />
       <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
         <Button
           variant="outlined"

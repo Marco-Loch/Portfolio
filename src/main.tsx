@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from '@tanstack/react-router';
-import { router } from './config/router.ts'; // Importiere den neuen Router
+import { router } from './config/router.ts';
 import './styles/index.css';
 import './config/i18next.ts';
 import MaterialProvider from './provider/material_UI_provider.tsx';
