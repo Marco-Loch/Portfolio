@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Stack } from '@mui/material';
 import gsap from 'gsap';
 
 const ExplodingText: React.FC = () => {
-  const textRef = useRef<HTMLDivElement>(null);
+  const textRef1 = useRef<HTMLDivElement>(null);
+  const textRef2 = useRef<HTMLDivElement>(null);
 
-  const explodeAndAssemble = () => {
-    if (!textRef.current) return;
-
-    const letters = textRef.current.querySelectorAll('span');
+  const explodeAndAssemble = (ref: React.RefObject<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const letters = ref.current.querySelectorAll('span');
 
     gsap.to(letters, {
       duration: 0.6,
@@ -26,43 +26,67 @@ const ExplodingText: React.FC = () => {
           rotation: 0,
           opacity: 1,
           stagger: 0.02,
-          ease: 'elastic.out(1, 1.5)',
+          ease: 'elastic.out(1, 0.5)',
         });
       },
     });
   };
 
   useEffect(() => {
-    explodeAndAssemble();
+    const timeout = setTimeout(() => {
+      explodeAndAssemble(textRef1);
+      setTimeout(() => explodeAndAssemble(textRef2), 300);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <Typography
-      variant="h1"
-      sx={{
-        fontFamily: "'Orbitron', sans-serif",
-        fontWeight: 700,
-        fontSize: { xs: '3.5rem', sm: '5rem', md: '7rem' },
-        letterSpacing: '-0.02em',
-        lineHeight: 1.1,
-        color: 'white',
-        cursor: 'pointer',
-        display: 'inline-block',
-      }}
-      onMouseEnter={explodeAndAssemble}>
-      <div ref={textRef}>
-        {'Marco Loch'.split('').map((char, i) => (
-          <span
-            key={i}
-            style={{
-              display: 'inline-block',
-              whiteSpace: 'pre', // wichtig für Leerzeichen
-            }}>
-            {char}
-          </span>
-        ))}
-      </div>
-    </Typography>
+    <Stack spacing={0.5} alignItems="center">
+      <Typography
+        variant="h1"
+        sx={{
+          fontFamily: "'Orbitron', sans-serif",
+          fontWeight: 700,
+          fontSize: { xs: '3rem', sm: '4.5rem', md: '6rem' },
+          letterSpacing: '-0.02em',
+          lineHeight: 1.1,
+          color: 'white',
+          cursor: 'pointer',
+          display: 'inline-block',
+        }}
+        onMouseEnter={() => explodeAndAssemble(textRef1)}>
+        <div ref={textRef1}>
+          {'Marco'.split('').map((char, i) => (
+            <span key={i} style={{ display: 'inline-block' }}>
+              {char}
+            </span>
+          ))}
+        </div>
+      </Typography>
+
+      <Typography
+        variant="h1"
+        sx={{
+          fontFamily: "'Orbitron', sans-serif",
+          fontWeight: 700,
+          fontSize: { xs: '3rem', sm: '4.5rem', md: '6rem' },
+          letterSpacing: '-0.02em',
+          lineHeight: 1.1,
+          color: 'white',
+          cursor: 'pointer',
+          display: 'inline-block',
+        }}
+        onMouseEnter={() => explodeAndAssemble(textRef2)}>
+        <div ref={textRef2}>
+          {'Loch'.split('').map((char, i) => (
+            <span key={i} style={{ display: 'inline-block' }}>
+              {char}
+            </span>
+          ))}
+        </div>
+      </Typography>
+    </Stack>
   );
 };
 
