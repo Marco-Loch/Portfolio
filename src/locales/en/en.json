@@ -43,7 +43,10 @@
                 },
             "evelike": {
                 "description": "A lobby-based online multiplayer strategy game. Uses socket.io for real-time communication with a custom Node server."
-                }
+                },
+            "pokedex": {
+                "description": "A Pokedex app that uses the Pokemon API to display information about all Pokemon."
+            }
         }
     },
     "validation": {

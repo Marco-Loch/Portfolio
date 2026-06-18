@@ -9,6 +9,7 @@ import reactIcon from '../assets/img/treact.png';
 import joinProjectImg from '../assets/img/join.png';
 import crazyDogImg from '../assets/img/crazydog.png';
 import eveLinkeImg from '../assets/img/evelike.png';
+import pokedexImg from '../assets/img/pokedex.png';
 
 import type { Project } from '../types/project_type';
 
@@ -61,5 +62,23 @@ export const projects: Project[] = [
     liveLink: 'https://evelike.onrender.com/',
     githubLink: 'https://github.com/Marco-Loch/EVElike',
     image: eveLinkeImg,
+  },
+  {
+    id: 'crazy-dog-project',
+    title: 'Crazy Dog',
+    translationKey: 'crazy-dog',
+    technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
+    liveLink: 'https://crazy-dog.marco-loch.de',
+    githubLink: 'https://github.com/Marco-Loch/2d-Game-DA',
+    image: crazyDogImg,
+  },
+  {
+    id: 'pokedex-project',
+    title: 'Pokedex',
+    translationKey: 'pokedex',
+    technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
+    liveLink: 'https://pokedex.marco-loch.de',
+    githubLink: 'https://github.com/Marco-Loch/Pokedex',
+    image: pokedexImg,
   },
 ];
