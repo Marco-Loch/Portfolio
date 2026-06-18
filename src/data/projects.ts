@@ -46,15 +46,6 @@ export const projects: Project[] = [
     image: joinProjectImg,
   },
   {
-    id: 'crazy-dog-project',
-    title: 'Crazy Dog',
-    translationKey: 'crazy-dog',
-    technologies: [allTechnologies.html, allTechnologies.css, allTechnologies.js],
-    liveLink: 'https://crazy-dog.marco-loch.de',
-    githubLink: 'https://github.com/Marco-Loch/2d-Game-DA',
-    image: crazyDogImg,
-  },
-  {
     id: 'evelike-project',
     title: 'EVElike',
     translationKey: 'evelike',
